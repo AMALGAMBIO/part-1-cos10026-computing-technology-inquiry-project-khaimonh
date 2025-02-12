@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+    font-family: sans-serif;
+}
+:root{
+    --lilac: #DEDEEA
+    --magenta: #bcb9d8 
+    --purple: #8488b5
+    --darkpurple: #61678b
+    --aqua: #78acc1
+    --skyblue: #98bfd0
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+.desc{
+    justify-self: center;
+    text-align: center;
+    width: 65vw;
+    padding: 0 8px;
+}
