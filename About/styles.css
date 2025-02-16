@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Navigation Menu */
+nav {
+  background: #998fc7;
+  padding: 0.5rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul li a {
+  display: block;
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #d2b0da;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #998fc7;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+}
+
+/* Main Content */
+main {
+  margin-left: 270px;
+  padding: 20px;
+  width: calc(100% - 270px);
+}
+
+/* About Content */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-content dl {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.about-content dt {
+  font-weight: bold;
+  width: 150px;
+}
+
+.about-content dd {
+  margin-left: 0;
+  width: calc(100% - 160px);
+}
+
+.about-content figure {
+  float: right;
+  width: 35%;
+  margin-left: 20px;
+}
+
+.about-content img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #5e747f;
+}
+
+/* Table Styles */
+.table-conttainer {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.table-conttainer th {
+  font-weight: bold;
+  background-color: #c98bb9;
+  color: #fff;
+  padding: 10px;
+}
+
+.table-conttainer td {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Email Styles */
+.email-container {
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.email-label {
+  font-weight: bold;
+  color: #5e747f;
+  margin-right: 10px;
+}
+
+.email-address a {
+  color: #c98bb9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email-address a:hover {
+  color: #5e747f;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  main {
+    margin-left: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-content dl,
+  .about-content figure {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
