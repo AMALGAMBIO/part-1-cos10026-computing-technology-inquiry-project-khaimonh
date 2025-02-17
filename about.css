@@ -45,15 +45,15 @@ nav ul li a:hover {
 	background-color: #bcb9d8;
 	color: #dedeea;
 }
-.menu-toggle{
-  display: none;
+.menu-toggle {
+	display: none;
 }
 /* Hamburger button */
 .hamburger {
 	display: none;
 	font-size: 2rem;
 	cursor: pointer;
-	position: absolute;
+	position: fixed;
 	top: 15px;
 	left: 15px;
 	right: 15px;
