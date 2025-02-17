@@ -379,7 +379,7 @@ main {
 		position: fixed;
 		top: 0;
 		right: -100%; /* Ẩn sidebar ra khỏi màn hình */
-		width: 250px;
+		width: 45vw;
 		height: 100%;
 		background-color: #8488b5;
 		padding: 20px;
@@ -405,6 +405,12 @@ main {
 		background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
 		display: none;
 		z-index: 5;
+	}
+	.top-nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 50%;
 	}
 
 	/* Khi sidebar mở thì overlay xuất hiện */
