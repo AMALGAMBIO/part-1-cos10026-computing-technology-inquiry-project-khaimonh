@@ -1,13 +1,13 @@
 :root{
-  --lilac: #dedeea;
-  --magenta: #bcb9d8;
-  --purple: #8488b5;
-  --darkpurple: #61678b;
-  --aqua: #78acc1;
-  --skyblue: #98bfd0;
-  --mainColor: #494949;
-  --secondayColor:  darkgray;
-  --white: #FFFFFF;
+    --lilac: #dedeea;
+    --magenta: #bcb9d8;
+    --purple: #8488b5;
+    --darkpurple: #61678b;
+    --aqua: #78acc1;
+    --skyblue: #98bfd0;
+	--mainColor: #494949;
+	--secondayColor:  darkgray;
+	--white: #FFFFFF;
 }
 
 ul {
@@ -34,6 +34,7 @@ li a {
 li a:hover {
 	background-color: var(--mainColor);
 }
+
 body{
 	width: 100%;
 	background-color: var(--lilac);
