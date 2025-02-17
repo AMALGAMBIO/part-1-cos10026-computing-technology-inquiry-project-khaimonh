@@ -1,3 +1,11 @@
+:root {
+	--lilac: #dedeea;
+	--magenta: #bcb9d8;
+	--purple: #8488b5;
+	--darkpurple: #61678b;
+	--aqua: #78acc1;
+	--skyblue: #98bfd0;
+}
 /* General Styles */
 body {
   overflow-x: hidden;
