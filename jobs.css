@@ -1,1 +1,105 @@
+:root{
+    --lilac: #dedeea;
+    --magenta: #bcb9d8;
+    --purple: #8488b5;
+    --darkpurple: #61678b;
+    --aqua: #78acc1;
+    --skyblue: #98bfd0;
+}
+
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--darkpurple);
+}
+  
+.menu{
+    float: left;
+    width: 20%;
+}
+  
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover{
+    background-color: #494949;
+}
+
+*{
+    margin: 0;
+    padding: 10;
+    
+}
+
+body{
+    background-color: var(--lilac);
+}
+
+.hr.line{
+    border: 20px solid var(--magenta)
+}
+
+.page {
+    margin: left;
+    float: left;
+    line-height: 1.5;
+	max-width: 75%;
+	border-radius: 1rem;
+	padding: 2.5rem;
+	background-color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.aside{
+    max-width: 25%;
+    margin: right;
+    float: right;
+    padding: auto;
+    border-radius: 1rem;
+    line-height: 1.25;
+    background-color: var(--magenta );
+    
+}
+
+.ash3{
+    font-size: 147%;
+    text-align: center;
+
+}
+
+.tittle{ 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.6rem;
+    margin: 0.25rem 0;
+    color: #494949;
+}
+
+.section{
+    background-color: var(--lilac);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--Rose800);
+}
+
+.footer{
+    text-align: center;
+    padding:8px 10px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--darkpurple);
+    color: white;
+}
+ 
 
