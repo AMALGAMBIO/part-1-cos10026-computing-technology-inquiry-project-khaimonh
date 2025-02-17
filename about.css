@@ -21,11 +21,10 @@ body {
 }
 
 /* Navigation Menu */
-
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: space-between;
   padding: 0;
   margin: 0;
 }
@@ -121,14 +120,13 @@ main {
   padding: 0;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
 /* Navigation Menu */
 nav {
   background: #8488b5;
   padding: 0.5rem 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -341,8 +339,7 @@ main {
 
   .sidebar .container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: column;
     align-items: center;
     width: 100%;
   }
@@ -385,8 +382,14 @@ main {
     background-color: #8488b5;
     padding: 20px;
     transition: right 0.3s ease-in-out;
+    z-index: 10;
   }
-
+  .sidebar .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
   .sidebar.active {
     display: block;
   }
@@ -405,11 +408,6 @@ main {
   /* Khi sidebar mở thì overlay xuất hiện */
   .menu-toggle:checked ~ .overlay {
     display: block;
-  }
-
-  /* Đảm bảo sidebar nằm trên overlay */
-  .sidebar {
-    z-index: 10;
   }
   main {
     margin-left: 0;
