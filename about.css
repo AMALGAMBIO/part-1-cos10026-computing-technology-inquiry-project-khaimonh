@@ -378,7 +378,7 @@ main {
 		position: fixed;
 		top: 0;
 		right: -100%; /* Ẩn sidebar ra khỏi màn hình */
-		width: 45vw;
+		width: 40vw;
 		height: 100%;
 		background-color: #8488b5;
 		padding: 20px;
