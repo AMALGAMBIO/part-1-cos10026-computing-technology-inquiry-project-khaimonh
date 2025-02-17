@@ -1,391 +1,444 @@
 /* General Styles */
 body {
-	overflow-x: hidden;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* Navigation Menu */
 
 nav {
-	background: #998fc7;
-	padding: 0.5rem 0;
+  background: #998fc7;
+  padding: 0.5rem 0;
 }
 
 nav ul {
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-	margin: 10px 0;
-	width: 100%;
-	text-align: center;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
 }
 
 nav ul li a {
-	display: block;
-	color: #ecf0f1;
-	font-weight: bold;
-	font-size: 1.6rem;
-	text-decoration: none;
-	padding: 10px;
-	border-radius: 3px;
-	transition: background 0.3s ease;
+  display: block;
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-	background-color: #d2b0da;
-	color: #fff;
+  background-color: #d2b0da;
+  color: #fff;
 }
 
 /* Hamburger button */
 .hamburger {
-	display: block;
-	font-size: 2rem;
-	cursor: pointer;
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	right: 15px;
-	background: none;
-	border: none;
-	color: #5e747f;
+  display: block;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #5e747f;
 }
 /* Main Content */
 main {
-	margin-left: 270px;
-	padding: 20px;
-	width: calc(100% - 270px);
+  margin-left: 270px;
+  padding: 20px;
+  width: calc(100% - 270px);
 }
 
 /* About Content */
 .about-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .about-content dl {
-	width: 60%;
-	margin-bottom: 20px;
+  width: 60%;
+  margin-bottom: 20px;
 }
 
 .about-content dt {
-	font-weight: bold;
-	width: 150px;
+  font-weight: bold;
+  width: 150px;
 }
 
 .about-content dd {
-	margin-left: 0;
-	width: calc(100% - 160px);
+  margin-left: 0;
+  width: calc(100% - 160px);
 }
 .figure {
-	float: right; /* Đưa hình ảnh sang phải */
-	width: 35%; /* Giới hạn kích thước */
-	margin-left: 20px; /* Tạo khoảng cách với văn bản */
+  float: right; /* Đưa hình ảnh sang phải */
+  width: 35%; /* Giới hạn kích thước */
+  margin-left: 20px; /* Tạo khoảng cách với văn bản */
 }
 
 /* Định dạng ảnh với viền đơn giản */
 .figure img {
-	width: 100%; /* Để ảnh co giãn theo figure */
-	height: auto;
-	border: 5px solid #5e747f; /* Viền ngắn gọn với border shorthand */
+  width: 100%; /* Để ảnh co giãn theo figure */
+  height: auto;
+  border: 5px solid #5e747f; /* Viền ngắn gọn với border shorthand */
 }
 
 /* Table Styles */
 .table-container {
-	width: 80%;
-	margin: 20px auto;
-	border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
 }
 
-.table-container body {
-	overflow-x: hidden;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+.table-container/* General Styles */
+  body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
-
 /* Navigation Menu */
 nav {
-	background: #998fc7;
-	padding: 0.5rem 0;
+  background: #998fc7;
+  padding: 0.5rem 0;
 }
 
 nav ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-	margin: 10px 0;
-	width: 100%;
-	text-align: center;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
 }
 
 nav ul li a {
-	display: block;
-	color: #ecf0f1;
-	font-weight: bold;
-	font-size: 1.6rem;
-	text-decoration: none;
-	padding: 10px;
-	border-radius: 3px;
-	transition: background 0.3s ease;
+  display: block;
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-	background-color: #d2b0da;
-	color: #5e747f;
+  background-color: #d2b0da;
+  color: #5e747f;
 }
-
+h2 {
+  text-align: center; /* Căn giữa tiêu đề */
+  width: 100%; /* Đảm bảo không bị thu nhỏ */
+  margin: 20px 0; /* Thêm khoảng cách trên dưới để đẹp hơn */
+}
 /* Sidebar */
 .sidebar {
-	width: 250px;
-	background-color: #998fc7;
-	padding: 20px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	border-radius: 0 15px 15px 0;
+  width: 250px;
+  background-color: #998fc7;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
 }
 
 /* Main Content */
 main {
-	margin-left: 270px;
-	padding: 20px;
-	width: calc(100% - 270px);
+  margin-left: 270px;
+  padding: 20px;
+  width: calc(100% - 270px);
 }
-
 /* About Content */
 .about-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .about-content dl {
-	display: flex;
-	flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 150px auto;
+  gap: 10px 15px;
+  max-width: 350px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .about-content dt {
-	width: 150px;
-	font-weight: bold;
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .about-content dd {
-	flex-grow: 1;
+  margin-left: 0;
+  text-align: left;
+  width: calc(100% - 160px); /* Đảm bảo dd không bị kéo dài quá mức */
+}
+/*picture*/
+.figure {
+  float: right;
+  width: 35%;
+  margin-left: 20px;
+}
+
+/* Định dạng ảnh với viền đơn giản */
+.figure img {
+  width: 100%; /* Để ảnh co giãn theo figure */
+  height: auto;
+  border: 5px solid #5e747f; /* Viền ngắn gọn với border shorthand */
 }
 .members {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .members dl {
-	display: flex;
-	flex-wrap: row;
+  display: flex;
+  flex-wrap: row;
 }
 
 .members dt {
-	width: 150px;
-	font-weight: bold;
+  width: 150px;
+  font-weight: bold;
 }
 
 .members dd {
-	flex-direction: column;
-	flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
 }
 /* Table Styles */
 .table-container {
-	width: 80%;
-	margin: 20px auto;
-	border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+.table-container th,
+.table-container td {
+  padding: 10px;
+  text-align: left;
 }
 
 .table-container th {
-	font-weight: bold;
-	background-color: #c98bb9;
-	color: #fff;
-	padding: 10px;
+  font-weight: bold;
+  background-color: #c98bb9;
+  color: #fff;
 }
 
 .table-container td {
-	background-color: #ecf0f1;
-	border: 1px solid #bec7bd;
-	padding: 10px;
-	text-align: left;
+  background-color: #ecf0f1;
+  border: 1px solid #bec7bd;
+}
+.about-content dt {
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap; /* Đảm bảo dt không bị xuống dòng */
+}
+.members {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  width: 100%;
+}
+.members dl {
+  display: grid;
+  grid-template-columns: 150px auto; /* Thu nhỏ cột dt */
+  gap: 10px 15px; /* Giảm khoảng cách giữa dt và dd */
+  max-width: 350px; /* Giới hạn tổng chiều rộng nhỏ hơn */
+  width: 100%;
 }
 
+.members dt {
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap; /* Ngăn dt xuống dòng */
+}
+
+.members dd {
+  margin: 0;
+  text-align: left;
+  word-break: break-word; /* Xuống dòng nếu nội dung quá dài */
+}
 /* Email Styles */
 .email-container {
-	margin-bottom: 1rem;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 10px;
-	border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .email-label {
-	font-weight: bold;
-	color: #5e747f;
-	margin-right: 10px;
+  font-weight: bold;
+  color: #5e747f;
+  margin-right: 10px;
 }
 
 .email-address a {
-	color: #c98bb9;
-	text-decoration: none;
-	transition: color 0.3s ease;
+  color: #c98bb9;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .email-address a:hover {
-	color: #5e747f;
+  color: #5e747f;
 }
 @media screen and (min-width: 768px) {
-	.sidebar {
-		width: 100%;
-		height: auto;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: #998fc7;
-		display: flex;
-		justify-content: center;
-		padding: 10px 0;
-		border-radius: 0;
-	}
+  main {
+    margin-top: 60px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #998fc7;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 0;
+  }
 
-	.sidebar .container {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-	}
+  .sidebar .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-	.top-nav ul {
-		display: flex;
-		flex-direction: row;
-		padding: 0;
-		margin: 0;
-	}
+  .top-nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
 
-	.top-nav ul li {
-		margin: 0 15px;
-		text-align: center;
-	}
+  .top-nav ul li {
+    margin: 0 15px;
+    text-align: center;
+  }
 
-	.top-nav ul li a {
-		font-size: 1.2rem;
-		padding: 10px 15px;
-	}
-
-	main {
-		margin-top: 60px; /* Dịch nội dung xuống để không bị sidebar che */
-		margin-left: 0; /* Xóa khoảng trống bên trái */
-		width: 100%;
-	}
+  .top-nav ul li a {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
 }
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-	.hamburger {
-		display: block;
-	}
+  .menu-toggle {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
 
-	.sidebar {
-		display: none;
-		width: 100%;
-		height: auto;
-		position: absolute;
-		background-color: #998fc7;
-	}
-	.sidebar {
-		position: fixed;
-		top: 0;
-		right: -100%; /* Ẩn sidebar ra ngoài bên phải */
-		width: 250px;
-		height: 100%;
-		background-color: #998fc7;
-		padding: 20px;
-		transition: right 0.3s ease-in-out;
-	}
-	.sidebar.active {
-		display: block;
-	}
-	/* Tạo lớp overlay */
-	.overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
-		display: none;
-		z-index: 5;
-	}
+  .sidebar {
+    display: none; /* Ẩn sidebar mặc định */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ẩn sidebar ra khỏi màn hình */
+    width: 250px;
+    height: 100%;
+    background-color: #998fc7;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+  }
 
-	/* Khi sidebar mở thì overlay xuất hiện */
-	.menu-toggle:checked ~ .overlay {
-		display: block;
-	}
+  .sidebar.active {
+    display: block;
+  }
+  /* Tạo lớp overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    display: none;
+    z-index: 5;
+  }
 
-	/* Đảm bảo sidebar nằm trên overlay */
-	.sidebar {
-		z-index: 10;
-	}
-	main {
-		margin-left: 0;
-		padding: 1rem;
-		width: 100%;
-	}
+  /* Khi sidebar mở thì overlay xuất hiện */
+  .menu-toggle:checked ~ .overlay {
+    display: block;
+  }
 
-	.container {
-		width: 100%;
-		padding: 0 10px;
-	}
+  /* Đảm bảo sidebar nằm trên overlay */
+  .sidebar {
+    z-index: 10;
+  }
+  main {
+    margin-left: 0;
+    padding: 1rem;
+    width: 100%;
+  }
 
-	.about-content {
-		flex-direction: column;
-	}
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
 
-	.about-content dl,
-	.about-content figure {
-		width: 100%;
-		margin: 0 0 20px 0;
-	}
+  .about-content {
+    flex-direction: column;
+  }
 
-	.about-content figure {
-		float: none;
-	}
+  .about-content dl,
+  .about-content figure {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
 
-	.table-container {
-		width: 100%;
-	}
-	.menu-toggle {
-		display: none;
-	}
-	.menu-toggle:checked + .hamburger + .sidebar {
-		display: block;
-	}
-	.menu-toggle:checked ~ .sidebar {
-		right: 0;
-	}
+  .about-content figure {
+    float: none;
+  }
+
+  .table-container {
+    width: 100%;
+  }
+  .menu-toggle:checked + .hamburger + .sidebar {
+    display: block;
+  }
+  .menu-toggle:checked ~ .sidebar {
+    right: 0;
+  }
 }
