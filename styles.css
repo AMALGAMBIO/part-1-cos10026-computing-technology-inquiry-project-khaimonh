@@ -6,6 +6,10 @@
 	--aqua: #78acc1;
 	--skyblue: #98bfd0;
 }
+/* hover: highlight buttons with animation 
+add transition
+mobile interface
+*/
 * {
 	margin: 0;
 	font-family: sans-serif;
@@ -14,20 +18,31 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 16px;
-    background-color: var(--purple);
+	padding: 36px;
+	background-color: var(--purple);
+	font-size: large;
+	font-weight: bold;
 }
 a {
 	text-decoration: none;
-
 	color: var(--magenta);
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	gap: 12px;
+	gap: 32px;
 	background-color: var(--purple);
+}
+.navbar a {
+	width: fit-content;
+	padding: 10px;
+	border-radius: 3px;
+}
+.navbar a:hover {
+	background-color: var(--lilac);
+	text-align: center;
+	color: var(--darkpurple);
 }
 .desc {
 	text-align: center;
