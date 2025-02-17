@@ -85,16 +85,16 @@ main {
   width: calc(100% - 160px);
 }
 .figure {
-  float: right; 
-  width: 35%; 
-  margin-left: 20px; 
+  float: right;
+  width: 35%;
+  margin-left: 20px;
 }
 
 /* Định dạng ảnh với viền đơn giản */
 .figure img {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  border: 5px solid #5e747f; 
+  border: 5px solid #5e747f;
 }
 
 /* Table Styles */
@@ -152,9 +152,10 @@ nav ul li a:hover {
   color: #61678b;
 }
 h2 {
-  text-align: center; 
-  width: 100%; 
-  margin: 20px 0; 
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+}
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -270,9 +271,9 @@ main {
 }
 .members dl {
   display: grid;
-  grid-template-columns: 150px auto; 
+  grid-template-columns: 150px auto;
   gap: 10px 15px;
-  max-width: 350px; 
+  max-width: 350px;
   width: 100%;
 }
 
