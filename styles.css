@@ -25,14 +25,13 @@ nav {
 }
 a {
 	text-decoration: none;
-	color: var(--magenta);
+	color: var(--lilac);
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	gap: 32px;
-	background-color: var(--purple);
 }
 .navbar a {
 	width: fit-content;
@@ -48,7 +47,7 @@ a {
 	text-align: center;
 	width: 60vw;
 	padding: 0 8px;
-	color: var(--darkpurple);
+	color: #212121;
 	font-weight: bold;
 }
 main {
@@ -59,7 +58,14 @@ main {
 	align-items: center;
 	justify-content: space-between;
 	height: 53vw;
+	padding-top: 64px;
 }
 .email {
 	color: var(--darkpurple);
+}
+
+.video-placeholder {
+	width: 60vw;
+	height: 128px;
+	background-color: var(--magenta);
 }
