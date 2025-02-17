@@ -5,9 +5,9 @@
   --darkpurple: #61678b;
   --aqua: #78acc1;
   --skyblue: #98bfd0;
-	--mainColor: #494949;
-	--secondayColor:  darkgray;
-	--white: #FFFFFF;
+  --mainColor: #494949;
+  --secondayColor:  darkgray;
+  --white: #FFFFFF;
 }
 
 ul {
@@ -16,24 +16,24 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: var(--darkpurple);
-  }
+}
   
-  li {
+li {
 	float: left;
 	width: 20%;
-  }
+}
   
-  li a {
+li a {
 	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-  }
+}
   
-  li a:hover {
+li a:hover {
 	background-color: var(--mainColor);
-  }
+}
 body{
 	width: 100%;
 	background-color: var(--lilac);
