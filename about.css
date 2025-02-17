@@ -103,14 +103,13 @@ main {
 }
 
 /* Table Styles */
-.table-conttainer {
+.table-container {
   width: 80%;
   margin: 20px auto;
   border-collapse: collapse;
 }
 
-.table-container/* General Styles */
-body {
+.table-container body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
   margin: 0;
