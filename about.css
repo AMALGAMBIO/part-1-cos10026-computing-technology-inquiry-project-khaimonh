@@ -13,11 +13,6 @@ body {
 
 /* Navigation Menu */
 
-nav {
-  background: #998fc7;
-  padding: 0.5rem 0;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -34,7 +29,7 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  color: #ecf0f1;
+  color: #78acc1;
   font-weight: bold;
   font-size: 1.6rem;
   text-decoration: none;
@@ -44,8 +39,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #d2b0da;
-  color: #fff;
+  background-color: #bcb9d8;
+  color: #dedeea;
 }
 
 /* Hamburger button */
@@ -59,7 +54,7 @@ nav ul li a:hover {
   right: 15px;
   background: none;
   border: none;
-  color: #5e747f;
+  color: #78acc1;
 }
 /* Main Content */
 main {
@@ -123,7 +118,7 @@ main {
 }
 /* Navigation Menu */
 nav {
-  background: #998fc7;
+  background: #8488b5;
   padding: 0.5rem 0;
 }
 
@@ -143,7 +138,7 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  color: #ecf0f1;
+  color: #dedeea;
   font-weight: bold;
   font-size: 1.6rem;
   text-decoration: none;
@@ -153,8 +148,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #d2b0da;
-  color: #5e747f;
+  background-color: #bcb9d8;
+  color: #61678b;
 }
 h2 {
   text-align: center; /* Căn giữa tiêu đề */
@@ -164,7 +159,7 @@ h2 {
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #998fc7;
+  background-color: #dedeea;
   padding: 20px;
   position: fixed;
   top: 0;
@@ -256,12 +251,12 @@ main {
 
 .table-container th {
   font-weight: bold;
-  background-color: #c98bb9;
-  color: #fff;
+  background-color: #78acc1;
+  color: #ecf0f1;
 }
 
 .table-container td {
-  background-color: #ecf0f1;
+  background-color: #dedeea;
   border: 1px solid #bec7bd;
 }
 .about-content dt {
@@ -303,18 +298,18 @@ main {
 
 .email-label {
   font-weight: bold;
-  color: #5e747f;
+  color: #bcb9d8;
   margin-right: 10px;
 }
 
 .email-address a {
-  color: #c98bb9;
+  color: #78acc1;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .email-address a:hover {
-  color: #5e747f;
+  color: #bcb9d8;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -328,7 +323,7 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #998fc7;
+    background-color: #8488b5;
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -378,7 +373,7 @@ main {
     right: -100%; /* Ẩn sidebar ra khỏi màn hình */
     width: 250px;
     height: 100%;
-    background-color: #998fc7;
+    background-color: #8488b5;
     padding: 20px;
     transition: right 0.3s ease-in-out;
   }
