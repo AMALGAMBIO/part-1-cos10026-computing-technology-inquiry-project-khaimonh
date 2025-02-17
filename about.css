@@ -85,16 +85,16 @@ main {
   width: calc(100% - 160px);
 }
 .figure {
-  float: right; /* Đưa hình ảnh sang phải */
-  width: 35%; /* Giới hạn kích thước */
-  margin-left: 20px; /* Tạo khoảng cách với văn bản */
+  float: right; 
+  width: 35%; 
+  margin-left: 20px; 
 }
 
 /* Định dạng ảnh với viền đơn giản */
 .figure img {
-  width: 100%; /* Để ảnh co giãn theo figure */
+  width: 100%; 
   height: auto;
-  border: 5px solid #5e747f; /* Viền ngắn gọn với border shorthand */
+  border: 5px solid #5e747f; 
 }
 
 /* Table Styles */
@@ -152,10 +152,9 @@ nav ul li a:hover {
   color: #61678b;
 }
 h2 {
-  text-align: center; /* Căn giữa tiêu đề */
-  width: 100%; /* Đảm bảo không bị thu nhỏ */
-  margin: 20px 0; /* Thêm khoảng cách trên dưới để đẹp hơn */
-}
+  text-align: center; 
+  width: 100%; 
+  margin: 20px 0; 
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -271,9 +270,9 @@ main {
 }
 .members dl {
   display: grid;
-  grid-template-columns: 150px auto; /* Thu nhỏ cột dt */
-  gap: 10px 15px; /* Giảm khoảng cách giữa dt và dd */
-  max-width: 350px; /* Giới hạn tổng chiều rộng nhỏ hơn */
+  grid-template-columns: 150px auto; 
+  gap: 10px 15px;
+  max-width: 350px; 
   width: 100%;
 }
 
