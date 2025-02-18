@@ -8,85 +8,77 @@
 }
 /* General Styles */
 body {
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   margin: 0;
   padding: 0;
 }
-
-/* Navigation Menu */
-nav {
-  background: #8488b5;
-  padding: 0.5rem 0;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  /* margin: 10px 0; */
-  width: 100%;
-  text-align: center;
-}
-
-nav ul li a {
-  display: block;
-  color: #dedeea;
-  font-weight: bold;
-  font-size: 1.6rem;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 3px;
-  transition: background 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #bcb9d8;
-  color: #61678b;
-}
-/* Hamburger button */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #78acc1;
+.home {
+  margin-left: 32px;
+  font-size: larger;
+  text-shadow: 2px 2px var(--darkpurple);
 }
 /* Main Content */
 main {
   margin-top: 64px;
-  margin-left: 270px;
   padding: 20px;
-  width: calc(100% - 270px);
+}
+/* Navigation Menu */
+nav {
+  background: #8488b5;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-right: 16px;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  color: #dedeea;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+nav ul li a:hover {
+  background-color: #bcb9d8;
+  color: #61678b;
+  transition: 350ms ease;
+  box-shadow: 4px 4px;
 }
 h2 {
   text-align: center;
-  width: 100%;
-  margin: 20px 0;
+  font-size: 1.5rem;
+  color: #494949;
 }
 /* Sidebar */
 .sidebar {
-  width: 250px;
-  background-color: #dedeea;
+  width: px;
   padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   border-radius: 0 15px 15px 0;
+}
+.sidebar {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #8488b5;
+  padding: 10px 0;
+  border-radius: 0;
 }
 /* About Content */
 .about-content {
@@ -97,7 +89,6 @@ h2 {
   text-align: center;
   width: 100%;
 }
-
 .about-content dl {
   display: grid;
   grid-template-columns: 150px auto;
@@ -106,27 +97,21 @@ h2 {
   width: 100%;
   margin-bottom: 20px;
 }
-
 .about-content dt {
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
 }
-
 .about-content dd {
   margin-left: 0;
   text-align: left;
-  width: calc(100% - 160px);
+  width: 100%;
 }
 /*picture*/
 .figure {
   float: right;
   width: 35%;
   margin-left: 20px;
-}
-.figure img {
-  width: 100%;
-  height: auto;
   border: 5px solid #5e747f;
 }
 /* Members Styles */
@@ -142,45 +127,36 @@ h2 {
   max-width: 350px;
   width: 100%;
 }
-
 .members dt {
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
 }
-
 .members dd {
-  margin: 0;
+  margin-left: 0;
   text-align: left;
-  word-break: break-word;
+  width: 100%;
 }
 /* Table Styles */
 .table-container {
   width: 80%;
   margin: 20px auto;
-  border-collapse: collapse;
   overflow-x: auto;
+  border-collapse: collapse;
 }
 .table-container th,
 .table-container td {
   padding: 10px;
   text-align: left;
+  border: 1px solid #bec7bd;
 }
-
 .table-container th {
   font-weight: bold;
   background-color: #78acc1;
   color: #ecf0f1;
 }
-
 .table-container td {
   background-color: #dedeea;
-  border: 1px solid #bec7bd;
-}
-.about-content dt {
-  font-weight: bold;
-  text-align: left;
-  white-space: nowrap;
 }
 /* Email Styles */
 .email-container {
@@ -189,74 +165,39 @@ h2 {
   padding: 10px;
   border-radius: 5px;
 }
-
 .email-label {
   font-weight: bold;
   color: #bcb9d8;
   margin-right: 10px;
 }
-
 .email-address a {
   color: #78acc1;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .email-address a:hover {
   color: #bcb9d8;
-}
-@media screen and (min-width: 768px) {
-  main {
-    margin-left: 0;
-    width: 100%;
-  }
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #8488b5;
-
-    padding: 10px 0;
-    border-radius: 0;
-  }
-
-  .top-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 24px;
-  }
-  .top-nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .top-nav ul li {
-    text-align: center;
-  }
-
-  .top-nav ul li a {
-    font-size: 1.2rem;
-    padding: 10px 15px;
-  }
 }
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: none;
   }
+  /* Hamburger button */
   .hamburger {
     display: block;
-    width: 40px;
-    height: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #78acc1;
   }
-
   .sidebar {
-    display: none; /* Ẩn sidebar mặc định */
+    display: none;
     position: fixed;
     top: 0;
     right: -100%; /* Ẩn sidebar ra khỏi màn hình */
@@ -271,10 +212,6 @@ h2 {
     align-items: center;
     width: 100%;
   }
-  .sidebar.active {
-    display: block;
-  }
-
   .overlay {
     position: fixed;
     top: 0;
@@ -288,41 +225,21 @@ h2 {
   .top-nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 50%;
   }
-
-  /* Khi sidebar mở thì overlay xuất hiện */
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  /* Sidebar appear when click on hamburger and overlay background */
   .menu-toggle:checked ~ .overlay {
     display: block;
   }
-  main {
-    margin-left: 0;
-    padding: 1rem;
-    width: 100%;
-  }
-
-  .about-content {
-    flex-direction: column;
-  }
-
-  .about-content dl,
-  .about-content figure {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-
-  .about-content figure {
-    float: none;
-  }
-
-  .table-container {
-    width: 100%;
-  }
   .menu-toggle:checked + .hamburger + .sidebar {
     display: block;
-  }
-  .menu-toggle:checked ~ .sidebar {
-    right: 0;
   }
 }
