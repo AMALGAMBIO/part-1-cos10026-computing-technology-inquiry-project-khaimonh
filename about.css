@@ -26,7 +26,6 @@ main {
 }
 /* Navigation Menu */
 nav {
-  background: #8488b5;
   padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
@@ -39,10 +38,8 @@ nav ul {
   gap: 50px;
   margin-right: 16px;
 }
-nav ul li {
-  text-align: center;
-}
 nav ul li a {
+  text-align: center;
   display: block;
   color: #dedeea;
   font-weight: bold;
@@ -57,6 +54,17 @@ nav ul li a:hover {
   transition: 350ms ease;
   box-shadow: 4px 4px;
 }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: #8488b5;
+  padding: 10px 0;
+  border-radius: 0;
+}
 h2 {
   text-align: center;
   font-size: 1.5rem;
@@ -69,25 +77,6 @@ h2::after {
   height: 2px;
   background-color: var(--darkpurple);
   margin: 10px auto;
-}
-/* Sidebar */
-.sidebar {
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  border-radius: 0 15px 15px 0;
-}
-.sidebar {
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #8488b5;
-  padding: 10px 0;
-  border-radius: 0;
 }
 .card {
   background-color: #dedeea;
@@ -189,7 +178,7 @@ h2::after {
 .email-address a:hover {
   color: #61678b;
 }
-.footer {
+footer {
   text-align: center;
   padding: 1px;
   background-color: var(--purple);
