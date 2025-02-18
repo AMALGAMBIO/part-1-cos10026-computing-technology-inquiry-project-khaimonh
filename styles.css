@@ -13,7 +13,7 @@ mobile interface
 body {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--skyblue);
+	background-color: var(--lilac);
 	align-items: center;
 }
 * {
@@ -29,13 +29,16 @@ nav {
 	font-size: large;
 	font-weight: bold;
 	min-width: 100vw;
+	border-bottom: 6px solid var(--darkpurple);
 }
 a {
 	text-decoration: none;
 	color: var(--lilac);
 }
 .home {
-	margin-left: 16px;
+	margin-left: 32px;
+	font-size: larger;
+	text-shadow: 2px 2px var(--darkpurple);
 }
 
 .navbar {
@@ -54,10 +57,11 @@ a {
 	text-align: center;
 	color: var(--darkpurple);
 	transition: 350ms ease;
+	box-shadow: 4px 4px;
 }
 .desc {
 	text-align: center;
-	width: 60vw;
+	max-width: 55vw;
 	padding: 0 8px;
 	color: #212121;
 	font-weight: bold;
@@ -68,11 +72,11 @@ main {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	min-height: 100vh;
-	padding-top: 64px;
+	min-height: 70vh;
+	padding-top: 48px;
 }
 .email {
-	color: var(--darkpurple);
+	color: var(--aqua);
 }
 
 .video-placeholder {
