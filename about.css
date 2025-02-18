@@ -14,7 +14,9 @@ body {
 }
 .home {
   margin-left: 32px;
-  font-size: larger;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--lilac);
   text-shadow: 2px 2px var(--darkpurple);
 }
 /* Main Content */
@@ -178,7 +180,8 @@ h2 {
 .email-address a:hover {
   color: #bcb9d8;
 }
-/* Responsive Design */
+
+/* tablet and mobile screen */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: none;

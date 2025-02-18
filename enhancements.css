@@ -1,0 +1,143 @@
+:root {
+  --lilac: #dedeea;
+  --magenta: #bcb9d8;
+  --purple: #8488b5;
+  --darkpurple: #61678b;
+  --aqua: #78acc1;
+  --skyblue: #98bfd0;
+}
+/* General Styles */
+body {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.home {
+  margin-left: 32px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--lilac);
+  text-shadow: 2px 2px var(--darkpurple);
+}
+/* Main Content */
+main {
+  margin-top: 64px;
+  padding: 20px;
+}
+/* Navigation Menu */
+nav {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-right: 16px;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  color: #dedeea;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+nav ul li a:hover {
+  background-color: #bcb9d8;
+  color: #61678b;
+  transition: 350ms ease;
+  box-shadow: 4px 4px;
+}
+/* Sidebar */
+.sidebar {
+  width: px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+}
+.sidebar {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #8488b5;
+  padding: 10px 0;
+  border-radius: 0;
+}
+/* tablet and mobile screen */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  /* Hamburger button */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #78acc1;
+  }
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ẩn sidebar ra khỏi màn hình */
+    width: 40vw;
+    height: 100%;
+    background-color: #8488b5;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 10;
+  }
+  .sidebar .container {
+    align-items: center;
+    width: 100%;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    display: none;
+    z-index: 5;
+  }
+  .top-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  /* Sidebar appear when click on hamburger and overlay background */
+  .menu-toggle:checked ~ .overlay {
+    display: block;
+  }
+  .menu-toggle:checked + .hamburger + .sidebar {
+    display: block;
+  }
+}
