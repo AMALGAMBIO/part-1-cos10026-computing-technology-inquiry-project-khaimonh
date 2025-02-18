@@ -10,6 +10,12 @@
 add transition
 mobile interface
 */
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--skyblue);
+	align-items: center;
+}
 * {
 	margin: 0;
 	font-family: sans-serif;
@@ -18,20 +24,25 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 36px;
+	padding: 32px;
 	background-color: var(--purple);
 	font-size: large;
 	font-weight: bold;
+	min-width: 100vw;
 }
 a {
 	text-decoration: none;
 	color: var(--lilac);
+}
+.home {
+	margin-left: 16px;
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	gap: 32px;
+	margin-right: 16px;
 }
 .navbar a {
 	width: fit-content;
@@ -42,6 +53,7 @@ a {
 	background-color: var(--lilac);
 	text-align: center;
 	color: var(--darkpurple);
+	transition: 350ms ease;
 }
 .desc {
 	text-align: center;
@@ -51,13 +63,12 @@ a {
 	font-weight: bold;
 }
 main {
-	background-color: var(--skyblue);
 	padding: 16px 8px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	height: 53vw;
+	min-height: 100vh;
 	padding-top: 64px;
 }
 .email {
