@@ -82,6 +82,10 @@ h2 {
   padding: 10px 0;
   border-radius: 0;
 }
+.card {
+  background-color: #dedeea;
+  border-radius: 30px;
+}
 /* About Content */
 .about-content {
   display: flex;

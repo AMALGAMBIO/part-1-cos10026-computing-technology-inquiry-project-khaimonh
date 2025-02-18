@@ -98,7 +98,7 @@ nav ul li a:hover {
     display: none;
     position: fixed;
     top: 0;
-    right: -100%; /* Ẩn sidebar ra khỏi màn hình */
+    right: -100%;
     width: 40vw;
     height: 100%;
     background-color: #8488b5;
@@ -116,7 +116,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    background: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 5;
   }
