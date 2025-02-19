@@ -197,13 +197,12 @@ footer {
   /* Hamburger button */
   .hamburger {
     display: block;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 8px;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    right: 15px;
+    top: 10px;
+    left: 10px;
     background: none;
     border: none;
     color: #78acc1;

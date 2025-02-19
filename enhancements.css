@@ -65,6 +65,19 @@ nav ul li a:hover {
   padding: 10px 0;
   border-radius: 0;
 }
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #494949;
+}
+p::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: var(--darkpurple);
+  margin: 10px auto;
+}
 .hamburger {
   display: none;
 }
@@ -85,13 +98,12 @@ footer {
   /* Hamburger button */
   .hamburger {
     display: block;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 8px;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    right: 15px;
+    top: 10px;
+    left: 10px;
     background: none;
     border: none;
     color: #78acc1;
