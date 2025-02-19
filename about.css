@@ -14,15 +14,28 @@ body {
 }
 .home {
   margin-left: 32px;
-  font-size: 1.6rem;
-  text-decoration: none;
-  color: var(--lilac);
+  font-size: 32px;
   text-shadow: 2px 2px var(--darkpurple);
+  /* text-decoration: underline; */
+  font-family: "Koulen", serif;
+  font-weight: 600;
+  font-style: italic;
 }
 /* Main Content */
 main {
   margin-top: 64px;
   padding: 20px;
+}
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  border-radius: 0;
+  background-color: #8488b5;
 }
 /* Navigation Menu */
 nav {
@@ -35,10 +48,13 @@ nav ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  justify-content: space-between;
+  gap: 24px;
   margin-right: 16px;
 }
-nav ul li a {
+nav a {
+  list-style: none;
+  display: flex;
   text-align: center;
   display: block;
   color: #dedeea;
@@ -48,22 +64,11 @@ nav ul li a {
   padding: 10px;
   border-radius: 3px;
 }
-nav ul li a:hover {
+ul a:hover {
   background-color: #bcb9d8;
   color: #61678b;
   transition: 350ms ease;
   box-shadow: 4px 4px;
-}
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  background-color: #8488b5;
-  padding: 10px 0;
-  border-radius: 0;
 }
 h2 {
   text-align: center;
@@ -180,7 +185,7 @@ h2::after {
 }
 footer {
   text-align: center;
-  padding: 1px;
+  padding: 8px;
   background-color: var(--purple);
   color: white;
 }
