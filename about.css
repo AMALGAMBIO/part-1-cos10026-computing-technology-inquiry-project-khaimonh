@@ -70,18 +70,10 @@ ul a:hover {
   transition: 350ms ease;
   box-shadow: 4px 4px;
 }
-h2 {
+h1 {
   text-align: center;
   font-size: 1.5rem;
   color: #494949;
-}
-h2::after {
-  content: "";
-  display: block;
-  width: 50%;
-  height: 2px;
-  background-color: var(--darkpurple);
-  margin: 10px auto;
 }
 .card {
   background-color: #dedeea;
@@ -99,7 +91,6 @@ h2::after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 100%;
 }
 .about-content dl {
   display: grid;
@@ -197,13 +188,12 @@ footer {
   /* Hamburger button */
   .hamburger {
     display: block;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 8px;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    right: 15px;
+    top: 10px;
+    left: 10px;
     background: none;
     border: none;
     color: #78acc1;
