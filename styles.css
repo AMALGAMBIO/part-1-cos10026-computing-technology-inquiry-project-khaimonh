@@ -17,6 +17,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	min-height: 100vh;
+	min-width: 100vw;
 }
 * {
 	margin: 0;
@@ -50,7 +51,7 @@ a {
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	gap: 32px;
+	gap: 24px;
 	margin-right: 16px;
 }
 .navbar a {
@@ -91,7 +92,6 @@ main {
 	color: var(--purple);
 }
 
-
 .video-placeholder {
 	width: 60vw;
 	height: 35vh;
@@ -114,4 +114,42 @@ footer {
 	backdrop-filter: blur(5px);
 	position: fixed;
 	bottom: 0;
+}
+.hamburger {
+	display: none;
+}
+
+/* Responsive section */
+@media screen and (max-width: 800px) {
+	nav {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 16px;
+		padding-left: 48px;
+	}
+	.navbar {
+		display: none;
+	}
+	.home {
+		margin: 0;
+	}
+	main {
+		margin-bottom: 10%;
+	}
+	.hamburger {
+		display: block;
+		font-size: 2rem;
+		cursor: pointer;
+		margin-bottom: 8px;
+		/* position: fixed;
+		top: 15px;
+		left: 15px;
+		right: 15px; */
+		background: none;
+		border: none;
+		color: var(--skyblue);
+		max-width: fit-content;
+	}
 }
