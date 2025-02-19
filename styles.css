@@ -34,7 +34,8 @@ body {
 	min-width: 100vw;
 	border-bottom: 6px solid var(--darkpurple);
 }
-#mobile {
+#mobile,
+.wrap-collapsible {
 	display: none;
 }
 a {
@@ -57,13 +58,15 @@ a {
 	gap: 24px;
 	margin-right: 16px;
 }
-.navbar a, .sidebar a {
+.navbar a,
+.navbar-mobile a {
 	width: fit-content;
 	padding: 10px;
 	border-radius: 3px;
 	font-style: italic;
 }
-.navbar a:hover, .sidebar a:hover{
+.navbar a:hover,
+.navbar-mobile a:hover {
 	background-color: var(--lilac);
 	text-align: center;
 	color: var(--darkpurple);
@@ -89,6 +92,7 @@ main {
 	background-blend-mode: multiply;
 	box-shadow: 4px 4px 4px var(--purple);
 	margin-bottom: 10vh;
+	border-radius: 4px;
 }
 .email {
 	background-color: var(--lilac);
@@ -127,65 +131,114 @@ footer {
 	.original {
 		display: none;
 	}
+	.home {
+		margin: 0;
+	}
 	#mobile {
 		display: flex;
 		gap: 16px;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: center;
 		padding: 16px;
-		padding-left: 48px;
+		/* padding-left: 48px; */
 		background-color: var(--purple);
 		font-size: medium;
 		font-weight: bold;
-		min-width: 100vw;
+		width: 100vw;
 		border-bottom: 4px solid var(--darkpurple);
+		transition: width 0.3s ease-in-out;
 	}
 	.navbar-mobile {
-		display: none; /* Hide menu by default */
-		flex-direction: column;
-		gap: 10px;
-		background-color: var(--purple);
-		padding: 10px;
-	}
-	.home {
-		margin: 0;
-	}
-	.home2{
-	margin-left: 32px;
-	font-size: 32px;
-	text-shadow: 2px 2px var(--darkpurple);
-	/* text-decoration: underline; */
-	font-family: 'Koulen', serif;
-	font-weight: 600;
-	font-style: italic;
-	
-	}
-	main {
-		margin-bottom: 10%;
-	}
-	.hamburger {
-		/* display: none; */
-		display: block;
-		visibility: visible;
-		font-size: 2rem;
-		margin-bottom: 8px;
-		background: none;
-		border: none;
-		color: var(--skyblue);
-		max-width: fit-content;
-		cursor: pointer;
-	}
-	#menu-toggle {
-		display: none;
-		/* opacity: 0.5; */
-	}
-	#menu-toggle:checked ~ .navbar-mobile {
 		display: flex;
-		/* display: flex;
-		flex-direction: column; */
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
-	#mobile:has(#menu-toggle:checked) .home {
-    display: none; /* Hides the home link */
-}
-
+	.navbar-mobile a {
+		width: auto;
+		padding: 10px;
+		border-radius: 3px;
+		font-style: italic;
+		font-weight: bold;
+	}
+	.navbar-mobile a:hover {
+		background-color: var(--lilac);
+		text-align: center;
+		color: var(--darkpurple);
+		transition: 350ms ease;
+		box-shadow: 4px 4px;
+	}
+	input[type='checkbox'] {
+		display: none;
+	}
+	.wrap-collapsible {
+		margin: 0 0;
+		display: block;
+		position: fixed;
+		left: 12px;
+		top: 16px;
+		/* transform: scale(0.8); */
+	}
+	.lbl-toggle {
+		/* transform: scale(0.8); */
+		display: block;
+		font-weight: bold;
+		font-family: monospace;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 1rem;
+		color: var(--skyblue);
+		background: var(--aqua);
+		cursor: pointer;
+		border-radius: 7px;
+		transition: all 0.25s ease-out;
+		width: 10vw;
+	}
+	.lbl-toggle:hover {
+		color: #fff;
+	}
+	.lbl-toggle::before {
+		content: ' ';
+		display: inline-block;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid currentColor;
+		vertical-align: middle;
+		margin-right: 0.7rem;
+		transform: translateY(-0.5px);
+		transition: transform 0.2s ease-out;
+	}
+	.toggle:checked + .lbl-toggle::before {
+		transform: rotate(90deg) translateX(-3px);
+	}
+	.collapsible-content {
+		padding: 4px;
+		max-height: 0px;
+		overflow: hidden;
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
+		transition: max-height 0.25s ease-in-out;
+	}
+	.toggle:checked + .lbl-toggle + .collapsible-content {
+		max-height: 350px;
+		border-top: 4px solid var(--darkpurple);
+		background-color: var(--purple);
+	}
+	.toggle:checked + .lbl-toggle {
+		/* max-width: 10vw; */
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	.collapsible-content .content-inner {
+		background: rgba(0, 105, 255, 0.2);
+		/* border-bottom: 1px solid rgba(0, 105, 255, 0.45); */
+		border-bottom-left-radius: 7px;
+		border-bottom-right-radius: 7px;
+		padding: 0.5rem 1rem;
+	}
+	.collapsible-content p {
+		margin-bottom: 0;
+	}
 }
