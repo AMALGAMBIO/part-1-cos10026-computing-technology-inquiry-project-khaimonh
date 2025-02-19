@@ -9,18 +9,22 @@
 	--secondayColor:  darkgray;
 	--white: #FFFFFF;
 }
-
-ul {
-	list-style-type: none;
+*{
 	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: var(--darkpurple);
+}
+
+.navbar{
+    list-style-type: none;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--darkpurple);
 }
   
-li {
-	float: left;
-	width: 20%;
+.menu{
+    float: left;
+    width: 20%;
 }
   
 li a {
@@ -44,7 +48,7 @@ hr{
 }
 .container{
 	width: 960px;
-	margin: 0 auto;
+	margin:  auto;
 }
 
 main{
@@ -129,4 +133,15 @@ form button{
 }
 form button:hover{
 	color: var(--white);
+}
+
+.footer{
+    text-align: center;
+    padding:8px 10px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--darkpurple);
+    color: white;
 }
