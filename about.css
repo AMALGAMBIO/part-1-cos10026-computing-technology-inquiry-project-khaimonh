@@ -1,3 +1,8 @@
+/* 
+Author: [Bitbops]  
+Purpose: Stylesheet for COS10026 Project - Part 1  
+Description: This file contains all CSS styles for the website, including layout, colors, typography, and responsiveness.  
+*/
 :root {
   --lilac: #dedeea;
   --magenta: #bcb9d8;
@@ -6,43 +11,51 @@
   --aqua: #78acc1;
   --skyblue: #98bfd0;
 }
-/* General Styles */
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+}
 body {
-  background-color: #ecf0f1;
   font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  padding: 0;
+  background-color: #ecf0f1;
+}
+main {
+  margin-top: 64px;
+  padding: 20px;
+  padding-top: 60px;
+}
+/* Header & Navigation styles */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8488b5;
+  padding: 12px 20px;
+  height: 110px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 .home {
   margin-left: 32px;
   font-size: 32px;
   text-shadow: 2px 2px var(--darkpurple);
-  /* text-decoration: underline; */
+  list-style: none;
   font-family: "Koulen", serif;
   font-weight: 600;
   font-style: italic;
-}
-/* Main Content */
-main {
-  margin-top: 64px;
-  padding: 20px;
-}
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  padding: 10px 0;
-  border-radius: 0;
-  background-color: #8488b5;
+  list-style: none;
 }
 /* Navigation Menu */
 nav {
-  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  list-style: none;
+  margin-left: auto;
 }
 nav ul {
   list-style: none;
@@ -52,7 +65,24 @@ nav ul {
   gap: 24px;
   margin-right: 16px;
 }
-nav a {
+a {
+  color: #dedeea;
+  font-weight: bold;
+  font-size: large;
+}
+.menu li {
+  margin-right: 20px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #dedeea;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+nav li a {
   list-style: none;
   display: flex;
   text-align: center;
@@ -64,17 +94,21 @@ nav a {
   padding: 10px;
   border-radius: 3px;
 }
-ul a:hover {
+ul li a:hover {
   background-color: #bcb9d8;
   color: #61678b;
   transition: 350ms ease;
   box-shadow: 4px 4px;
 }
-h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #494949;
+/* hide nav menu of mobile when it full screen */
+.close-menu,
+.open-menu {
+  display: none;
 }
+#check {
+  display: none;
+}
+/* card styles */
 .card {
   background-color: #dedeea;
   border-radius: 30px;
@@ -84,65 +118,57 @@ h1 {
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-/* About Content */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.card:hover {
+  transform: scale(1.05);
 }
-.about-content dl {
+/* content in the card style */
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #494949;
+  margin-bottom: 15px;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--darkpurple);
+  margin: 10px auto;
+}
+.about-content,
+.members {
+  display: flex;
+  justify-content: center;
+}
+.about-content dl,
+.members dl {
   display: grid;
   grid-template-columns: 150px auto;
   gap: 10px 15px;
   max-width: 350px;
-  width: 100%;
-  margin-bottom: 20px;
 }
-.about-content dt {
+.about-content dt,
+.members dt {
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
 }
-.about-content dd {
+.about-content dd,
+.members dd {
   margin-left: 0;
   text-align: left;
-  width: 100%;
 }
-/*picture*/
+/*picture style*/
 .figure img {
   float: right;
   width: 100%;
   border-radius: 50%;
   border: 2px solid var(--darkpurple);
 }
-/* Members Styles */
-.members {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.members dl {
-  display: grid;
-  grid-template-columns: 150px auto;
-  gap: 10px 15px;
-  max-width: 350px;
-  width: 100%;
-}
-.members dt {
-  font-weight: bold;
-  text-align: left;
-  white-space: nowrap;
-}
-.members dd {
-  margin-left: 0;
-  text-align: left;
-  width: 100%;
-}
 /* Table Styles */
 .table-container {
-  width: 80%;
+  width: 50%;
   margin: 20px auto;
   overflow-x: auto;
   border-collapse: collapse;
@@ -174,74 +200,57 @@ h1 {
 .email-address a:hover {
   color: #61678b;
 }
+/* footer styles */
 footer {
   text-align: center;
-  padding: 8px;
-  background-color: var(--purple);
+  padding: 12px;
+  background-color: var(--darkpurple);
   color: white;
+  font-size: 14px;
+  position: relative;
+  width: 100%;
 }
 /* tablet and mobile screen */
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-  /* Hamburger button */
-  .hamburger {
-    display: block;
-    font-size: 3rem;
-    cursor: pointer;
-    padding: 5px 8px;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    color: #78acc1;
-  }
-  .sidebar {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -100%; /* Ẩn sidebar ra khỏi màn hình */
-    width: 40vw;
-    height: 100%;
-    background-color: #8488b5;
-    padding: 20px;
-    transition: right 0.3s ease-in-out;
-    z-index: 10;
-  }
-  .sidebar .container {
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-  .overlay {
+    justify-content: center;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    right: -100%;
+    margin-right: 0;
+    width: 30%;
+    height: 100vh;
+    background-color: var(--purple);
+    transition: right 0.1s ease-in-out;
+  }
+  .menu li {
+    margin-top: 20px;
+  }
+  .menu a {
+    font-size: 22px;
+  }
+  #check:checked ~ .menu-overlay {
+    display: block;
+  }
+  .open-menu,
+  .close-menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    font-size: 1.8rem;
+    color: #dedeea;
+    cursor: pointer;
+  }
+  #check:checked ~ .menu {
+    right: 0;
+  }
+  #check:checked ~ .open-menu {
     display: none;
-    z-index: 5;
   }
-  .top-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 50%;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  /* Sidebar appear when click on hamburger and overlay background */
-  .menu-toggle:checked ~ .overlay {
-    display: block;
-  }
-  .menu-toggle:checked + .hamburger + .sidebar {
-    display: block;
+  #check:not(:checked) ~ .close-menu {
+    display: none;
   }
 }

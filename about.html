@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Our Group</title>
     <link rel="stylesheet" href="about.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
   </head>
   <body>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <aside class="sidebar">
-      <nav class="top-nav">
+    <header>
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="open-menu">&#9776;</label>
         <a href="index.html" class="home">BITBOPS</a>
-        <ul>
-          <a href="jobs.html">Jobs</a>
-          <a href="apply.html">Apply</a>
-          <a href="about.html">About</a>
-          <a href="enhancements.html">Enhancements</a>
-          <a href="mailto:10575858@student.swin.edu.au">Contact</a>
+        <ul class="menu">
+          <li><a href="jobs.html">Job</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="enhancements.html">Enhancements</a></li>
+          <li><a href="mailto:105725858@swin.edu.au">Contact</a></li>
         </ul>
+        <label for="check" class="close-menu">&#9747;</label>
       </nav>
-    </aside>
-    <label for="menu-toggle" class="overlay"></label>
+    </header>
     <main>
       <div class="card">
         <h1>About Our Group</h1>
