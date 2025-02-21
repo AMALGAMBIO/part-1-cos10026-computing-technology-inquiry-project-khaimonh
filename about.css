@@ -74,12 +74,8 @@ a {
   margin-right: 20px;
 }
 .menu li a {
-  text-decoration: none;
-  color: #dedeea;
   font-size: 16px;
   text-transform: capitalize;
-  padding: 10px;
-  border-radius: 3px;
   transition: 0.3s;
 }
 nav li a {
@@ -159,12 +155,18 @@ h1::after {
   margin-left: 0;
   text-align: left;
 }
-/*picture style*/
-.figure img {
+figure .text {
+  width: 55%;
+  text-align: left;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+figure img {
   float: right;
-  width: 100%;
+  width: 300px; /* Điều chỉnh kích thước ảnh */
+  height: auto;
   border-radius: 50%;
-  border: 2px solid var(--darkpurple);
+  border: 10px solid var(--darkpurple);
 }
 /* Table Styles */
 .table-container {
