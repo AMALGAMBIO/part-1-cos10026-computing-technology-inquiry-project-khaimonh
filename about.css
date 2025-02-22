@@ -190,14 +190,17 @@ figure img {
   background-color: var(--lilac);
 }
 /* Email Styles */
-.email-address a {
-  margin-bottom: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+.email-address p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.email-address p a {
+  white-space: nowrap;
   color: #78acc1;
   text-decoration: none;
-  transition: color 0.3s ease;
-  display: flex;
-  justify-content: center;
+  font-weight: bold;
 }
 .email-address a:hover {
   color: #61678b;
