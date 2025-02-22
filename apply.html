@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
- 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 		<title>Job Application Form</title>
-         <link rel="stylesheet" href="apply.css" /> 
- 	</head>
-<body>
-    <nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Job Application Form</title>
+		<link rel="stylesheet" href="apply.css" />
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+		</style>
+	</head>
+	<body>
+		<!-- <nav>
 		<ul class="navbar">
 			<li class="menu"><a href="index.html">Bitbops</a></li>
 			<li class="menu"><a href="about.html">About</a></li>
@@ -16,87 +18,160 @@
 			<li class="menu"><a href="apply.html">Apply</a></li>
 			<li class="menu"><a href="enhancements.html">Enhancements</a></li>
 		</ul>
-	</nav>
-	<div class="container">
-		<main>			
-			<div class="application-form">
-				<h2>Job Application Form </h2>
-				<div class="application-form-detail">					
-					<form>
-						<h4>Contact Information</h4>
-						<div class="form-inline">
-							<div class="form-group">
-								<label>First Name *</label>
-								<input type="text" id="fname" name="fname" maxlength="20" required>
+	</nav> -->
+		<nav class="original">
+			<a href="index.html" class="home">Bitbops </a>
+			<div class="navbar">
+				<a href="about.html" class="about">About</a>
+				<a href="jobs.html" class="jobs">Jobs</a>
+				<a href="apply.html" class="apply">Applications</a>
+				<a href="enhancements.html" class="enhancements"
+					>Enhancements</a
+				>
+				<a href="mailto:" class="email">Contact</a>
+			</div>
+		</nav>
+		<!-- mobile only -->
+		<header>
+			<nav>
+				<input type="checkbox" id="check" />
+				<label for="check" class="open-menu">&#9776;</label>
+				<a href="index.html" class="home">BITBOPS</a>
+				<ul class="menu">
+					<li><a href="about.html">About</a></li>
+					<li><a href="jobs.html">Jobs</a></li>
+					<li><a href="apply.html">Apply</a></li>
+					<li><a href="enhancements.html">Enhancements</a></li>
+					<li><a href="mailto:105728093@swin.edu.au">Contact</a></li>
+				</ul>
+				<label for="check" class="close-menu">&#9747;</label>
+			</nav>
+		</header>
+		<div class="container">
+			<main>
+				<div class="application-form">
+					<div class="application-form-detail">
+						<h2>Job Application Form</h2>
+						<form>
+							<h4>Contact Information</h4>
+							<div class="form-inline">
+								<div class="form-group">
+									<label>First Name *</label>
+									<input
+										type="text"
+										id="fname"
+										name="fname"
+										maxlength="20"
+										required
+									/>
+								</div>
+								<div class="form-group">
+									<label>Last Name *</label>
+									<input
+										type="text"
+										id="lname"
+										name="lname"
+										maxlength="20"
+										required
+									/>
+								</div>
 							</div>
 							<div class="form-group">
-								<label>Last Name *</label>
-								<input type="text" id="lname" name="lname" maxlength="20" required>
+								<label>Email *</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									required
+								/>
 							</div>
-						</div>
-						<div class="form-group">
-							<label>Email *</label>
-							<input type="email" id="email" name="email" required>
-						</div>
-						<div class="form-group">
-							<label>Phone *</label>
-							<input type="tel" id="tel" name="tel" minlength="8" maxlength="20" required>
-						</div>
-                        <div class="form-group">
-                            <label>Gender *</label>
-                            <select id="address" required>
-								<option value="male"> Male </option>
-								<option value="female"> Female </option>
-							</select>
-                        </div>
-						<div class="form-group">
-							<label> Address *</label>
-							<input type="address" id="address" maxlength="40" name="adress" required>
-						</div>
-						<div class="form-group">
-							<label> Suburb/Town *</label>
-							<input type="address" id="address" maxlength="40" name="adress" required>
-						</div>
-						<div class="form-group">
-							<label> State *</label>
-							<select id="address" required>
-								<option value="VIC"> VIC </option>
-								<option value="NSW"> NSW </option>
-								<option value="QLD"> QLD </option>
-								<option value="NT"> NT </option>
-								<option value="WA"> WA </option>
-								<option value="SA"> SA </option>
-								<option value="TAS"> TAS </option>
-								<option value="ACT"> ACT </option>
-							</select>
-						</div>
-						<br>
-						<h4>Position</h4>
-						<hr>
-						<div class= "form-group">
-							<label> Job reference number *</label>
-							<input type="text" id="job number" minlength="4" maxlength="4" name="job number" required>
-						</div>
-						<div class="form-group">
-							<label>CV Upload *</label>
-							<input type="file" id="resume" name="resume" required>
-						</div>
-						<div class="form-group">
-							<label> Other skills</label>
-							<input type="text" id="skills" name="skills">
-						</div>
-						<hr>
-						<button type="submit">Submit</button>
-					</form>				
+							<div class="form-group">
+								<label>Phone *</label>
+								<input
+									type="tel"
+									id="tel"
+									name="tel"
+									minlength="8"
+									maxlength="20"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label>Gender *</label>
+								<select id="address" required>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label> Address *</label>
+								<input
+									type="address"
+									id="address"
+									maxlength="40"
+									name="adress"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label> Suburb/Town *</label>
+								<input
+									type="address"
+									id="address"
+									maxlength="40"
+									name="adress"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label> State *</label>
+								<select id="address" required>
+									<option value="VIC">VIC</option>
+									<option value="NSW">NSW</option>
+									<option value="QLD">QLD</option>
+									<option value="NT">NT</option>
+									<option value="WA">WA</option>
+									<option value="SA">SA</option>
+									<option value="TAS">TAS</option>
+									<option value="ACT">ACT</option>
+								</select>
+							</div>
+							<br />
+							<h4>Position</h4>
+							<hr />
+							<div class="form-group">
+								<label> Job reference number *</label>
+								<input
+									type="text"
+									id="job number"
+									minlength="4"
+									maxlength="4"
+									name="job number"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label>CV Upload *</label>
+								<input
+									type="file"
+									id="resume"
+									name="resume"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label> Other skills</label>
+								<input type="text" id="skills" name="skills" />
+							</div>
+							<hr />
+							<button type="submit">Submit</button>
+						</form>
+					</div>
 				</div>
-			</div>	
-			<footer class="footer"> 
-				<p> Copyright © 2025 by Bitbops .All rights reserved.</p>
-			</footer>	
-		</main> 
-	</div>
-	
-
-</body>
-
+				<footer class="footer">
+					<p>Copyright © 2025 by Bitbops .All rights reserved.</p>
+				</footer>
+			</main>
+		</div>
+	</body>
 </html>
