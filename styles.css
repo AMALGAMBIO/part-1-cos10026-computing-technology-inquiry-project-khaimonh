@@ -121,6 +121,7 @@ footer {
 	padding: 8px;
 	min-width: 100vw;
 	text-align: center;
+	color: var(--lilac);
 	background-color: var(--darkpurple);
 	/* border-top: 4px solid var(--purple); */
 	/* background-blend-mode: lighten; */
@@ -140,6 +141,16 @@ footer {
 	.home {
 		margin: 0;
 	}
+	main {
+		margin-bottom: 0;
+		margin-top: 13.5vh;
+		margin-right: 35%;
+		min-height: 80vh;
+		box-shadow: 4px 4px 8px var(--purple);
+	}
+	.desc {
+		text-align: justify;
+	}
 	#check {
 		display: none;
 	}
@@ -152,6 +163,7 @@ footer {
 		padding: 24px;
 		/* height: 110px; */
 		position: fixed;
+		border-bottom: 6px solid var(--darkpurple);
 		top: 0;
 		left: 0;
 		/* z-index: 1000; */
@@ -264,13 +276,16 @@ footer {
 		align-items: center;
 		justify-content: center;
 		position: fixed;
+		padding-left: 24px;
+		padding-right: 12px;
 		top: 0;
 		right: -100%;
 		margin-right: 0;
-		width: 30%;
+		width: 25%;
 		height: 100vh;
 		background-color: var(--purple);
 		transition: right 0.1s ease-in-out;
+		box-shadow: -4px -4px 8px var(--darkpurple);
 	}
 	.menu li {
 		margin-top: 20px;
@@ -297,9 +312,11 @@ footer {
 	#check:checked ~ .open-menu {
 		display: none;
 	}
+
 	#check:not(:checked) ~ .close-menu {
 		display: none;
 	}
+
 	nav li a {
 		list-style: none;
 		display: flex;
