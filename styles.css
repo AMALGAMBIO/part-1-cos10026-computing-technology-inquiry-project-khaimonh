@@ -205,11 +205,11 @@ footer {
 	#check:checked ~ .open-menu {
 		display: none;
 	}
-	
+
 	#check:not(:checked) ~ .close-menu {
 		display: none;
 	}
-	
+
 	nav li a {
 		list-style: none;
 		display: flex;
