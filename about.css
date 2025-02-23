@@ -124,18 +124,26 @@ h1::after {
   display: grid;
   grid-template-columns: 150px auto;
   gap: 10px 15px;
-  max-width: 350px;
+  max-width: 400px;
 }
+
 .about-content dt,
 .members dt {
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
 }
+
 .about-content dd,
 .members dd {
   margin-left: 0;
   text-align: left;
+}
+.profile,
+.interests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* image styles */
 figure {
@@ -152,11 +160,11 @@ figure img {
   height: auto;
   border-radius: 50%;
   margin-left: 10px;
-  border: 10px solid var(--darkpurple);
+  border: 5px solid #61678b;
 }
 /* Table Styles */
 .table-container {
-  width: 50%;
+  width: 90%;
   margin: 20px auto;
   overflow-x: auto;
   border-collapse: collapse;
@@ -173,7 +181,7 @@ figure img {
   color: #ecf0f1;
 }
 .table-container td {
-  background-color: var(--lilac);
+  background-color: #dedeea;
 }
 /* Email Styles */
 .email-address p {
