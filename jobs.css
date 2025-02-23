@@ -6,6 +6,10 @@
 	--aqua: #78acc1;
 	--skyblue: #98bfd0;
 }
+
+*{ 
+	box-sizing: border-box;
+}
 body {
 	max-width: 100vw;
 }
@@ -246,7 +250,7 @@ body {
 }
 
 .ash3 {
-	font-size: 145%;
+	font-size: 129%;
 	text-align: center;
 }
 
