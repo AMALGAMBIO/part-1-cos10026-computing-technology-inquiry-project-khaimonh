@@ -114,26 +114,15 @@ header {
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* Link styles within a card */
-.card-link {
-  width: 80%;
-  color: #61678b;
-}
-
-.card-link:hover .card {
-  transform: scale(1.05);
-}
-
 /* Title styles inside a card */
-h1 {
+h2 {
   text-align: center;
   font-size: 1.8rem;
   color: #494949;
   margin-bottom: 15px;
 }
 
-h1::after {
+h2::after {
   content: "";
   display: block;
   width: 80px;
@@ -201,7 +190,8 @@ figure img {
 
 /* Table styles */
 .table-container {
-  width: 100%;
+  width: 80%;
+  max-width: 800px;
   margin: auto; /* Center the table within the section */
   overflow-x: auto;
   border-collapse: collapse;
@@ -222,6 +212,28 @@ figure img {
 
 .table-container td {
   background-color: #dedeea;
+}
+/* Email Styles */
+.email-address p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.email-address p a {
+  white-space: nowrap;
+  color: #5e747f;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Link styles within a card */
+.card-link {
+  width: 80%;
+  color: #61678b;
+}
+
+.card-link:hover .card {
+  transform: scale(1.05);
 }
 
 /* Footer styling */
