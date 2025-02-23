@@ -37,10 +37,7 @@ body {
 	min-width: 100vw;
 	border-bottom: 6px solid var(--darkpurple);
 }
-/* #mobile,
-.wrap-collapsible {
-	display: none;
-} */
+
 a {
 	text-decoration: none;
 	color: var(--lilac);
@@ -49,7 +46,6 @@ a {
 	margin-left: 32px;
 	font-size: 32px;
 	text-shadow: 2px 2px var(--darkpurple);
-	/* text-decoration: underline; */
 	font-family: 'Koulen', serif;
 	font-weight: 600;
 	font-style: italic;
@@ -95,11 +91,14 @@ main {
 	margin-bottom: 10vh;
 	border-radius: 4px;
 }
+
+/* make contact button separate */
 .email {
 	background-color: var(--lilac);
 	color: var(--purple);
 }
 
+/* style for video box */
 .video-placeholder {
 	width: 60vw;
 	height: 35vh;
@@ -118,24 +117,20 @@ footer {
 	text-align: center;
 	color: var(--lilac);
 	background-color: var(--darkpurple);
-	/* border-top: 4px solid var(--purple); */
-	/* background-blend-mode: lighten; */
-	backdrop-filter: blur(5px);
 	position: fixed;
 	bottom: 0;
 }
-/* .hamburger {
-	display: none;
-} */
 
 /* Responsive section */
 @media screen and (max-width: 800px) {
+	/* hides large screen navbar */
 	.original {
 		display: none;
 	}
 	.home {
 		margin: 0;
 	}
+	/* adjusts main content to right hand side */
 	main {
 		margin-bottom: 0;
 		margin-top: 13.5vh;
@@ -146,9 +141,14 @@ footer {
 	.desc {
 		text-align: justify;
 	}
+	h1 {
+		text-align: left;
+	}
+	/* hides checkbox */
 	#check {
 		display: none;
 	}
+
 	header {
 		width: 94vw;
 		display: flex;
@@ -156,12 +156,8 @@ footer {
 		align-items: center;
 		background-color: #8488b5;
 		padding: 24px;
-		/* height: 110px; */
 		position: fixed;
 		border-bottom: 6px solid var(--darkpurple);
-		top: 0;
-		left: 0;
-		/* z-index: 1000; */
 	}
 	.menu {
 		display: flex;
@@ -172,12 +168,12 @@ footer {
 		padding-left: 24px;
 		padding-right: 12px;
 		top: 0;
+		/* hides sidebar when not in use */
 		right: -100%;
-		margin-right: 0;
 		width: 25%;
 		height: 100vh;
 		background-color: var(--purple);
-		transition: right 0.1s ease-in-out;
+		transition: right 0.2s ease-in-out;
 		box-shadow: -4px -4px 8px var(--darkpurple);
 	}
 	.menu li {
@@ -186,9 +182,7 @@ footer {
 	.menu a {
 		font-size: 22px;
 	}
-	#check:checked ~ .menu-overlay {
-		display: block;
-	}
+
 	.open-menu,
 	.close-menu {
 		display: block;
@@ -199,6 +193,7 @@ footer {
 		color: #dedeea;
 		cursor: pointer;
 	}
+	/* opens side bar when checked */
 	#check:checked ~ .menu {
 		right: 0;
 	}
@@ -229,105 +224,3 @@ footer {
 		box-shadow: 4px 4px;
 	}
 }
-/* #mobile {
-	display: flex;
-	gap: 16px;
-	align-items: center;
-	justify-content: center;
-	padding: 16px;
-
-	background-color: var(--purple);
-	font-size: medium;
-	font-weight: bold;
-	width: 100vw;
-	border-bottom: 4px solid var(--darkpurple);
-	transition: width 0.3s ease-in-out;
-}
-.navbar-mobile {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.navbar-mobile a {
-	width: auto;
-	padding: 10px;
-	border-radius: 3px;
-	font-style: italic;
-	font-weight: bold;
-}
-.navbar-mobile a:hover {
-	background-color: var(--lilac);
-	text-align: center;
-	color: var(--darkpurple);
-	transition: 350ms ease;
-	box-shadow: 4px 4px;
-} */
-/* input[type='checkbox'] {
-	display: none;
-}
-.wrap-collapsible {
-	margin: 0 0;
-	display: block;
-	position: fixed;
-	left: 12px;
-	top: 16px;
-
-}
-.lbl-toggle {
-
-	display: block;
-	font-weight: bold;
-	font-family: monospace;
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1rem;
-	color: var(--skyblue);
-	background: var(--aqua);
-	cursor: pointer;
-	border-radius: 7px;
-	transition: all 0.25s ease-out;
-	width: 10vw;
-}
-.lbl-toggle:hover {
-	color: #fff;
-}
-.lbl-toggle::before {
-	content: ' ';
-	display: inline-block;
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid currentColor;
-	vertical-align: middle;
-	margin-right: 0.7rem;
-	transform: translateY(-1px);
-	transition: transform 0.2s ease-out;
-}
-.toggle:checked + .lbl-toggle::before {
-	transform: rotate(90deg) translateX(-3px);
-}
-.collapsible-content {
-	padding: 4px;
-	max-height: 0px;
-	overflow: hidden;
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-bottom-left-radius: 8px;
-	transition: max-height 0.25s ease-in-out;
-}
-.toggle:checked + .lbl-toggle + .collapsible-content {
-	max-height: 350px;
-	border-top: 4px solid var(--darkpurple);
-	background-color: var(--purple);
-}
-.toggle:checked + .lbl-toggle {
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-.collapsible-content .content-inner {
-	background: rgba(0, 105, 255, 0.2);
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	padding: 0.5rem 1rem;
-} */
