@@ -7,7 +7,7 @@
 	--skyblue: #98bfd0;
 }
 
-*{ 
+* {
 	box-sizing: border-box;
 }
 body {
@@ -229,7 +229,7 @@ body {
 	margin: left;
 	float: left;
 	line-height: 1.5;
-	max-width: 75%;
+	max-width: 70%;
 	border-bottom-right-radius: 1rem;
 	padding: 2.5rem;
 	background-color: white;
@@ -241,12 +241,13 @@ body {
 
 .aside {
 	max-width: 25%;
-	margin: right;
+	margin: 8px;
 	float: right;
 	padding: auto;
 	border-radius: 1rem;
 	line-height: 1.25;
 	background-color: var(--magenta);
+	border: 2px solid var(--darkpurple);
 }
 
 .ash3 {
@@ -298,7 +299,7 @@ body {
 		display: none;
 	}
 	header {
-		width: 94vw;
+		width: 100vw;
 		display: flex;
 		justify-content: center;
 		align-items: center;
