@@ -110,6 +110,15 @@ h1::after {
   background-color: var(--darkpurple);
   margin: 10px auto;
 }
+/* Footer styling */
+footer {
+  padding: 8px;
+  min-width: 100vw;
+  text-align: center;
+  background-color: var(--darkpurple);
+  color: var(--lilac);
+  position: relative;
+}
 /* Responsive section */
 @media screen and (max-width: 800px) {
   .original {
