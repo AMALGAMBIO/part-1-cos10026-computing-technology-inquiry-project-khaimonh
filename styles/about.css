@@ -13,24 +13,10 @@ Description: This file contains all CSS styles for the website, including layout
   --skyblue: #98bfd0;
 }
 
-/* Global styles */
+/* page styles */
 * {
   margin: 0;
   font-family: sans-serif;
-}
-
-/* Navigation bar styles */
-.original {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  background-color: var(--purple);
-  font-size: large;
-  font-weight: bold;
-  min-width: 100vw;
-  position: fixed;
-  border-bottom: 6px solid var(--darkpurple);
 }
 
 /* Link styles */
@@ -49,7 +35,19 @@ a {
   font-style: italic;
 }
 
-/* Navigation bar links */
+/* Navigation bar styles */
+.original {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: var(--purple);
+  font-size: large;
+  font-weight: bold;
+  min-width: 100vw;
+  position: fixed;
+  border-bottom: 6px solid var(--darkpurple);
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -99,7 +97,7 @@ li {
   list-style: none;
 }
 
-/* Header styling (hidden) */
+/* Hidden hamburger and checkbox */
 header {
   display: none;
 }
