@@ -119,6 +119,9 @@ main {
 	height: 35vh;
 	background-color: var(--magenta);
 	border: 2px solid black;
+	text-align: center;
+	font-size: small;
+	/* color: var(--purple); */
 }
 .video{
 	width: 60vw;
