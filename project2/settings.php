@@ -1,9 +1,8 @@
 <?php
-// settings.php
 
 // Database connection variables
-$host = 'localhost';          // Replace with your database host if different
-$user = 'your_username';      // Replace with your MySQL username
-$password = 'your_password';  // Replace with your MySQL password
-$database = 'your_database_name';  // Replace with your database name
+$host = 'feenix-mariadb.swin.edu.au';          // Replace with your database host if different
+$user = 's105725858';      // Replace with your MySQL username
+$password = '110804';  // Replace with your MySQL password
+$database = 's105725858_db';  // Replace with your database name
 ?>
