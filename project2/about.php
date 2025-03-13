@@ -1,6 +1,7 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
 <?php include 'settings.php'; ?>
+<link rel="stylesheet" href="./styles/about.css" />
 <main>
   <figure>
     <img src="./images/Group image.jpg" alt="Group Image" title="Group Image" usemap="#image-map" />

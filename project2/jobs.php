@@ -1,4 +1,7 @@
 <?php include 'header.inc'; ?>
+<?php include 'menu.inc'; ?>
+<?php include 'settings.php'; ?>
+<link rel="stylesheet" href="./styles/jobs.css" />
 <main class="page">
   <article>
     <div class="wrap-collabsible">

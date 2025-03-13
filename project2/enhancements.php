@@ -1,6 +1,7 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
 <?php include 'settings.php'; ?>
+<link rel="stylesheet" href="./styles/enhancements.css" />
 <main>
   <div class="card">
     <h1>Enhancements</h1>

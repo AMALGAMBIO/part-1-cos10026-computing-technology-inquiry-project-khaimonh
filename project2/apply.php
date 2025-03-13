@@ -1,7 +1,7 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
 <?php include 'settings.php'; ?>
-<?php include './styles/apply.css'; ?>
+<link rel="stylesheet" href="./styles/apply.css" />
 <div class="container">
   <main>
     <div class="application-form">
