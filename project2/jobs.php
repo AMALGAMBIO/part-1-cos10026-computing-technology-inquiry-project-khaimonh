@@ -1,0 +1,126 @@
+<?php include 'header.inc'; ?>
+<?php include 'menu.inc'; ?>
+<?php include 'settings.php'; ?>
+<link rel="stylesheet" href="./styles/jobs.css" />
+<main class="page">
+  <article>
+    <div class="wrap-collabsible">
+      <input id="collapsible" class="toggle" type="checkbox">
+      <label for="collapsible" class="lbl-toggle">Project Manager</label>
+      <div class="collapsible-content">
+        <div class="content-inner">
+          <p>A Project Manager is responsible for planning, executing, and successfully completing projects within the allotted timeline and budget. This role demands strong leadership qualities, excellent communication skills, and the ability to manage complex projects across various departments.</p>
+          <section class="section">
+            <h3>Company’s position description reference number: QWER</h3>
+            <h3>Responsibilities:</h3>
+            <ul>
+              <li>Develop and define project goals, scope, and deliverables that support business objectives in collaboration with senior management and stakeholders.</li>
+              <li>Create comprehensive project plans to be shared with clients and other staff members.</li>
+              <li>Lead and coordinate project staff and resources to ensure project milestones are met and quality standards are upheld.</li>
+              <li>Identify and minimize project risks throughout its life cycle.</li>
+              <li>Conduct post-project evaluation and identify successful and unsuccessful project elements.</li>
+              <li>Communicate proactively the status, issues, and risks involved in the project to all stakeholders.</li>
+            </ul>
+          </section>
+          <section class="re-pre">
+            <h2>Required</h2>
+            <ol>
+              <li>Bachelor’s degree in Business Administration, Management, Engineering, or related field.</li>
+              <li>Strong working knowledge of MS Office and project management tools.</li>
+            </ol>
+            <h2>Preferred</h2>
+            <ul>
+              <li>A Master’s degree or an advanced certification such as PMP (Project Management Professional) certification</li>
+              <li>Minimum of 1.5 years of project management experience in the field</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Salary and benefits</h3>
+            <ul>
+              <li>Health and dental insurance</li>
+              <li>Salary range: $70,000 - $160,000</li>
+              <li>Dynamic and innovative work environment</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <div class="wrap-collabsible-1">
+      <input id="collapsible-1" class="toggle-1" type="checkbox">
+      <label for="collapsible-1" class="lbl-toggle-1">Senior Data Engineer</label>
+      <div class="collapsible-content-1">
+        <div class="content-inner-1">
+          <p>As a Senior Data Engineer, you'll be taking the lead in designing and maintaining complex data ecosystems. Your experience will be instrumental in optimizing data processes, ensuring data quality, and driving data-driven decision-making within the organization.</p>
+          <section class="section">
+            <h3>Company’s position description reference number: CVBN</h3>
+            <h3>Responsibilities:</h3>
+            <ul>
+              <li>Architecting and designing complex data systems and pipelines</li>
+              <li>Leading and mentoring junior data engineers and team members.</li>
+              <li>Collaborating with cross-functional teams to define data requirements.</li>
+              <li>Implementing advanced data quality checks and ensuring data integrity.</li>
+              <li>Optimizing data processes for efficiency and scalability.</li>
+              <li>Overseeing data security and compliance measures.</li>
+              <li>Evaluating and recommending new technologies to enhance data infrastructure.</li>
+              <li>Providing technical expertise and guidance for critical data projects.</li>
+            </ul>
+          </section>
+          <section class="re-pre">
+            <h2>Required</h2>
+            <ol>
+              <li>Proficiency in designing and building complex data pipelines and data processing systems.</li>
+              <li>Leadership and mentorship capabilities to guide junior data engineers and foster skill development.</li>
+              <li>Strong expertise in data modeling and database design for optimal performance.</li>
+            </ol>
+            <h2>Preferred</h2>
+            <ul>
+              <li>Expertise in implementing robust data security measures and access controls.</li>
+              <li>Master's degree in computer science or related field.</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Salary and benefits</h3>
+            <ul>
+              <li>Health and dental insurance</li>
+              <li>Average salary per year: $125,000</li>
+              <li>Dynamic and innovative work environment</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+<aside class="aside">
+  <h3 class="ash3">Why Bitbops?</h3>
+  <ul>
+    <li>Flexible working time</li>
+    <li>Attractive benefits</li>
+    <li>Competitive salary</li>
+    <li>Total 20 days off</li>
+    <li>Excellent company trip</li>
+    <li>Training for Fresher</li>
+    <li>Personal development</li>
+    <li>On-site chance abroad</li>
+  </ul>
+  <hr>
+  <h3 class="ash3">Upcoming Jobs Needed</h3>
+  <ul>
+    <li>Data scientist</li>
+    <li>Data Analyst</li>
+    <li>Front-end Developer</li>
+    <li>Game Developer</li>
+    <li>Tester</li>
+  </ul>
+  <hr>
+  <h3 class="ash3">Partner Companies</h3>
+  <ul>
+    <li>Google</li>
+    <li>Meta</li>
+    <li>Tiktok</li>
+    <li>Home Credit Vietnam</li>
+    <li>VNG Corporation</li>
+  </ul>
+</aside>
+<?php include 'footer.inc'; ?>
