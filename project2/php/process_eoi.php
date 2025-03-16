@@ -19,6 +19,7 @@ $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully";
 $insertSQL = "INSERT INTO eoi (jobReference, firstName, lastName, streetAddress, suburb, state, postcode, email, phone, skill1, skill2, skill3, otherSkills, status)
               VALUES ('$jobReference', '$firstName', '$lastName', '$streetAddress', '$suburb', '$state', '$postcode', '$email', '$phone', '$skill1', '$skill2', '$skill3', '$otherSkills', 'New')";
 if ($conn->query($insertSQL) === TRUE) {
