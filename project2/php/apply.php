@@ -60,7 +60,7 @@
           <hr />
           <div class="form-group">
             <label>Job reference number *</label>
-            <input type="text" id="job_number" name="job_number" minlength="4" maxlength="4" required />
+            <input type="text" id="job_number" name="job_number" minlength="5" maxlength="5" required />
           </div>
           <div class="form-group">
             <label>CV Upload *</label>
