@@ -23,6 +23,7 @@ include 'menu.inc';
         <th>Job Reference</th>
         <th>First Name</th>
         <th>Last Name</th>
+        <th>Address</th>
         <th>Email</th>
         <th>Phone</th>
         <th>Skills</th>
@@ -37,6 +38,7 @@ include 'menu.inc';
             echo "<td>" . $row["JobRef"] . "</td>";
             echo "<td>" . $row["FirstName"] . "</td>";
             echo "<td>" . $row["LastName"] . "</td>";
+            echo "<td>" . $row["Address"] . "</td>";
             echo "<td>" . $row["Email"] . "</td>";
             echo "<td>" . $row["Phone"] . "</td>";
             echo "<td>" . $row["Skills"] . "</td>";
