@@ -50,7 +50,7 @@
         <div class="application-form">
           <div class="application-form-detail">
             <h2>Job Application Form</h2>
-            <form method="post" action="process_eoi.php" novalidate="novalidate">
+            <form enctype="multipart/form-data" method="post" action="process_eoi.php" novalidate="novalidate">
               <h4>Contact Information</h4>
               <div class="form-inline">
                 <div class="form-group">
@@ -147,7 +147,7 @@
               </div>
               <div class="form-group">
                 <label>CV Upload *</label>
-                <input type="file" id="file" name="file" required />
+                <input type="file" id="fileToUpload" name="fileToUpload" required />
               </div>
               <div class="form-group">
                 <label> Other skills</label>
