@@ -50,7 +50,7 @@
         <div class="application-form">
           <div class="application-form-detail">
             <h2>Job Application Form</h2>
-            <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+            <form method="post" action="process_eoi.php" novalidate="novalidate">
               <h4>Contact Information</h4>
               <div class="form-inline">
                 <div class="form-group">
@@ -91,15 +91,16 @@
               </div>
               <div class="form-group">
                 <label>Gender *</label>
-                <select id="address" required>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                <select id="gender" name="gender" required>
+                  <option value="Male" name="gender" id="gender">Male</option>
+                  <option value="Female" name="gender" id="gender">Female</option>
                 </select>
               </div>
               <div class="form-group">
                 <label> Address *</label>
                 <input
                   type="address"
+                  name="address"
                   id="address"
                   maxlength="40"
                   name="adress"
@@ -110,7 +111,8 @@
                 <label> Suburb/Town *</label>
                 <input
                   type="address"
-                  id="address"
+                  id="stown"
+                  name="stown"
                   maxlength="40"
                   name="adress"
                   required
@@ -118,7 +120,7 @@
               </div>
               <div class="form-group">
                 <label> State *</label>
-                <select id="address" required>
+                <select id="state" name="state" required>
                   <option value="VIC">VIC</option>
                   <option value="NSW">NSW</option>
                   <option value="QLD">QLD</option>
@@ -136,23 +138,23 @@
                 <label> Job reference number *</label>
                 <input
                   type="text"
-                  id="job number"
+                  id="jobnumber"
                   minlength="4"
                   maxlength="4"
-                  name="job number"
+                  name="jobnumber"
                   required
                 />
               </div>
               <div class="form-group">
                 <label>CV Upload *</label>
-                <input type="file" id="resume" name="resume" required />
+                <input type="file" id="file" name="file" required />
               </div>
               <div class="form-group">
                 <label> Other skills</label>
                 <input type="text" id="skills" name="skills" />
               </div>
               <hr />
-              <button type="submit">Submit</button>
+              <button type="submit" name="submit">Submit</button>
             </form>
           </div>
         </div>
