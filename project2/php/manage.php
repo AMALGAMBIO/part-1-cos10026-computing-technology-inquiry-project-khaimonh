@@ -92,7 +92,35 @@ function fetchAndDisplayEOIs($conn, $query, $params = []) {
 
     $stmt->close();
 }
+function deleteEOI($conn, $jobRef) {
+    // Debug: Display the JobRef to be deleted
+    echo "JobRef to delete: " . htmlspecialchars($jobRef) . "<br>";
 
+    // Prepare the DELETE query
+    $query = "DELETE FROM eoi WHERE JobRef = ?";
+    $stmt = $conn->prepare($query);
+    
+    echo "Executing query: " . $query . "<br>";
+
+    if (!$stmt) {
+        die("Query preparation failed: " . $conn->error);
+    }
+
+    // Bind the parameter and execute the query
+    $stmt->bind_param("s", $jobRef);
+    if ($stmt->execute()) {
+        // Check if any rows were affected
+        if ($stmt->affected_rows > 0) {
+            echo "EOI with JobRef " . htmlspecialchars($jobRef) . " has been deleted successfully.<br>";
+        } else {
+            echo "No EOI found with JobRef " . htmlspecialchars($jobRef) . ".<br>";
+        }
+    } else {
+        echo "Error deleting EOI: " . $stmt->error . "<br>";
+    }
+
+    $stmt->close();
+}
 $query = "SELECT * FROM eoi ORDER BY EOInumber ASC";
 fetchAndDisplayEOIs($conn, $query);
 ?>
@@ -138,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["searchByName"])){
         echo "First Name entered: " . htmlspecialchars($firstName) . "<br>";
         echo "Last Name entered: " . htmlspecialchars($lastName) . "<br>";   
     }
-    $query = "SELECT * FROM eoi WHERE FirstName = ? and LastName = ? ORDER BY EOInumber ASC";
+    $query = "SELECT * FROM eoi WHERE FirstName = ? or LastName = ? ORDER BY EOInumber ASC";
     echo "Executing query: " . $query . "<br>";
 
     fetchAndDisplayEOIs($conn, $query, ["ss", $firstName, $lastName]);
@@ -147,11 +175,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["searchByName"])){
 <h3>Delete Applications</h3>
 <form method="post" action="manage.php">
     <input type="text" name="deleteJobRef" placeholder="Enter Job Reference to Delete" required>
-    <button type="submit" name="deleteEOI">Delete</button>
+    <button type="submit" name="confirmDeleteEOI">Delete</button>
 </form>
-<?php require "footer.inc"; 
- ?>
+
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmDeleteEOI"])){
+    $jobRef = trim($_POST["deleteJobRef"]);
+    echo "<h4>Confirm Deletion</h4>";
+    echo "<p>Are you sure you want to delete the EOI with Job Reference: " . htmlspecialchars($jobRef) . "?</p>";
+    echo '<form method="post" action="manage.php">';
+    echo '<input type="hidden" name="deleteJobRef" value="' . htmlspecialchars($jobRef) . '">';
+    echo '<button type="submit" name="deleteEOI">Yes, Delete</button>';
+    echo '<button type="submit" name="cancelDelete">Cancel</button>';
+    echo '</form>';
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteEOI"])) {
+    $jobRef = trim($_POST["deleteJobRef"]);
+    deleteEOI($conn, $jobRef);
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cancelDelete"])) {
+    echo "<p>Deletion canceled.</p>";
+}
+?>
+
+<?php require "footer.inc"; 
+
 // // Check if the search form was submitted
 // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
 //     $jobRef = trim($_POST["jobRef"]); 
@@ -164,5 +212,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["searchByName"])){
 // } else {
 //     // If no search, get all EOIs
 //     $result = $conn->query($sql);
-// }
 ?>
