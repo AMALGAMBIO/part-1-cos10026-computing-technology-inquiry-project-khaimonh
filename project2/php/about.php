@@ -27,11 +27,11 @@
     <section class="members">
       <dl>
         <dt>Huyen Trang</dt>
-        <dd>About</dd>
+        <dd>About page, html to php</dd>
         <dt>Khai Minh</dt>
-        <dd>Index</dd>
+        <dd>Index page, manage page, enhancement</dd>
         <dt>Mai Nguyen</dt>
-        <dd>Jobs and Apply</dd>
+        <dd>Jobs and Apply, Process EOI page</dd>
       </dl>
     </section>
   </div>
