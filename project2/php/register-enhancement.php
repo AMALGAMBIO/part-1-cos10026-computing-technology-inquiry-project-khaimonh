@@ -1,0 +1,65 @@
+<?php
+session_start(); // Start the session
+include 'header.inc'; // Include header
+require_once 'settings.php'; // Include database settings
+
+// Redirect to manage.php if already logged in
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    header("Location: manage.php");
+    exit;
+}
+?>
+
+<html lang="en">
+<body>
+    <h1>Register</h1>
+    <form action="register-enhancement.php" method="post">
+        <label for="username">Admin Username</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Admin Password</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" name="register" value="Register">
+    </form>
+</body>
+</html>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    // Check if the user already exists
+    $stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
+    if (!$stmt) {
+        die("Query preparation failed: " . $conn->error);
+    }
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        echo "User already exists.";
+        $stmt->close();
+        exit;
+    } else {
+        // Register the user
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
+        if (!$stmt) {
+            die("Query preparation failed: " . $conn->error);
+        }
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        // $role = 'admin'; // Default role for new users
+        $stmt->bind_param("ss", $username, $hashedPassword);
+        if ($stmt->execute()) {
+            echo "User registered successfully.";
+        } else {
+            echo "Error registering user: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+}
+session_unset();
+session_destroy();
+?>

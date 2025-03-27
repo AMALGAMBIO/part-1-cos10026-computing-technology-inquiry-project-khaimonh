@@ -4,35 +4,34 @@
 
 session_start(); // Start the session, creates $_SESSION
 // Check if the user is logged in
-// if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) { //if $_SESSION is not set or not true
-//     header("Location: login.php"); // Redirect to login page if not logged in
-//     exit; 
-// }
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) { //if $_SESSION is not set or not true
+    header("Location: login-enhancement.php"); // Redirect to login page if not logged in
+    exit; }
 include 'header.inc';
 include 'menu.inc';
 require_once 'settings.php' ;
-// if (isset($conn)) {
-//     switch (connection_status()) {
-//         case CONNECTION_NORMAL:
-//             $txt = 'Connection is in a normal state';
-//             break;
-//         case CONNECTION_ABORTED:
-//             $txt = 'Connection aborted';
-//             break;
-//         case CONNECTION_TIMEOUT:
-//             $txt = 'Connection timed out';
-//             break;
-//         case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
-//             $txt = 'Connection aborted and timed out';
-//             break;
-//         default:
-//             $txt = 'Unknown';
-//             break;
-//     }
-//     echo $txt;
-// } else {
-//     die("Connection failed: " . mysqli_connect_error());
-// }
+if (isset($conn)) {
+    switch (connection_status()) {
+        case CONNECTION_NORMAL:
+            $txt = 'Connection is in a normal state';
+            break;
+        case CONNECTION_ABORTED:
+            $txt = 'Connection aborted';
+            break;
+        case CONNECTION_TIMEOUT:
+            $txt = 'Connection timed out';
+            break;
+        case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
+            $txt = 'Connection aborted and timed out';
+            break;
+        default:
+            $txt = 'Unknown';
+            break;
+    }
+    echo $txt;
+} else {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 ?>
 
@@ -195,6 +194,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteEOI"])) {
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cancelDelete"])) {
     echo "<p>Deletion canceled.</p>";
+}
+?>
+
+<h3>Change EOI Status</h3>
+<form method="post" action="manage.php">
+    <input type="text" name="statusJobRef" placeholder="Enter Job Reference" required>
+    <label for="newStatus">Select New Status:</label>
+    <select name="newStatus" id="newStatus" required>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+    <button type="submit" name="updateStatus">Update Status</button>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["updateStatus"])) {
+    $jobRef = trim($_POST["statusJobRef"]);
+    $newStatus = trim($_POST["newStatus"]);
+
+    // Debug: Display the JobRef and new status
+    echo "JobRef to update: " . htmlspecialchars($jobRef) . "<br>";
+    echo "New Status: " . htmlspecialchars($newStatus) . "<br>";
+
+    // Prepare the UPDATE query
+    $query = "UPDATE eoi SET Status = ? WHERE JobRef = ?;";
+    $stmt = $conn->prepare($query);
+    // Bind the parameters and execute the query
+    $stmt->bind_param("ss", $newStatus, $jobRef);
+    if ($stmt->execute()) {
+        // Check if any rows were affected
+        if ($stmt->affected_rows > 0) {
+            echo "Status for EOI with JobRef " . htmlspecialchars($jobRef) . " has been updated to " . htmlspecialchars($newStatus) . ".<br>";
+        } else {
+            echo "No EOI found with JobRef " . htmlspecialchars($jobRef) . ".<br>";
+        }
+    } else {
+        echo "Error updating status: " . $stmt->error . "<br>";
+    }
+
+    $stmt->close();
 }
 ?>
 
