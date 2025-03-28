@@ -18,7 +18,7 @@ $jobnumber = trim($_POST['jobnumber']);
 $skills = trim($_POST['skills']);
 
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = new mysqli($host, $user, $password, $database);
 if($conn) {
   echo "<p>Connection successful</p>";
  
@@ -26,20 +26,18 @@ if($conn) {
   echo "<p>Connection failed</p>";
 }
 
-$query = "INSERT INTO `eoi`(Job Reference Number, First Name, Last Name, Gender, Phone Number, Street Address, Suburb Town, State, Email Address, Other Skills)
-          VALUES($jobnumber, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $skills)";
+$stmt = $conn->prepare("INSERT INTO eoi (`Job Reference Number`, `First Name`, `Last Name`, `Gender`, `Phone number`, `Street Address`, `Suburb Town`, `State`, `Email Address`, `Other Skills`)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssssss", $jobnumber, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $skills);
 
-$result = mysqli_query($conn, $query);
-
-mysqli_close($conn);
-if(!$result) {
-    echo "<p> Something is wrong with ", $query, "</p>";
-}
-else {
-    echo "<p> Successfully added New data record</p>";
+if ($stmt->execute()) {
+    echo "<p>Successfully added new data record</p>";
+} else {
+    echo "<p>Something went wrong: " . $stmt->error . "</p>";
 }
 
-
+$stmt->close();
+$conn->close();
 
 ?>
 
