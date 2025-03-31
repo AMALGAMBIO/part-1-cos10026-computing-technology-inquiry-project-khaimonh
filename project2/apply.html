@@ -50,7 +50,7 @@
         <div class="application-form">
           <div class="application-form-detail">
             <h2>Job Application Form</h2>
-            <form method="post" action="./php/apply.php">
+            <form action="apply.php" method="post" enctype="multipart/form-data">
               <h4>Contact Information</h4>
               <div class="form-inline">
                 <div class="form-group">
@@ -144,15 +144,15 @@
                 />
               </div>
               <div class="form-group">
-                <label for="fileToUpload">CV Upload *</label>
-                <input type="file" id="fileToUpload" name="fileToUpload" required />
+                <label for="cv_image">Upload CV:</label>
+                <input type="file" name="cv_image" id="cv_image" accept="image/*" required />
               </div>
               <div class="form-group">
                 <label for="skills">Other Skills</label>
                 <input type="text" id="skills" name="skills" />
               </div>
               <hr />
-              <button type="submit" name="submit">Submit</button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>
