@@ -3,10 +3,10 @@
 // ini_set('display_errors', 1);
 
 session_start(); // Start the session, creates $_SESSION
-// Check if the user is logged in
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) { //if $_SESSION is not set or not true
-    header("Location: login-enhancement.php"); // Redirect to login page if not logged in
-    exit; }
+// // Check if the user is logged in
+// if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) { //if $_SESSION is not set or not true
+//     header("Location: login-enhancement.php"); // Redirect to login page if not logged in
+//     exit; }
 include 'header.inc';
 include 'menu.inc';
 require_once 'settings.php' ;
@@ -221,6 +221,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["updateStatus"])) {
     // Prepare the UPDATE query
     $query = "UPDATE eoi SET Status = ? WHERE JobRef = ?;";
     $stmt = $conn->prepare($query);
+
+    if (!$stmt) {
+        die("Query preparation failed: " . $conn->error);
+    }
+
     // Bind the parameters and execute the query
     $stmt->bind_param("ss", $newStatus, $jobRef);
     if ($stmt->execute()) {
@@ -238,7 +243,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["updateStatus"])) {
 }
 ?>
 
-<?php require "footer.inc"; 
+<?php
+include 'footer.inc'; 
 
 // // Check if the search form was submitted
 // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
