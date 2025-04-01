@@ -79,6 +79,8 @@ main {
   min-height: 65vh;
   gap: 16px;
   padding-top: 200px;
+  background-color: var(--lilac);
+  box-shadow: none;
 }
 
 /* Body styling */
@@ -90,8 +92,15 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   min-width: 100vw;
+  background-image: none;
+  box-shadow: none;
 }
-
+figure p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #325c76;
+}
 /* List styles */
 li {
   list-style: none;
@@ -102,22 +111,43 @@ header {
   display: none;
 }
 
-/* Card styles */
-.card {
-  background-color: var(--skyblue);
-  border-radius: 30px;
-  width: 80%;
-  max-width: 600px;
-  padding: 15px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Group container for cards */
+.group-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
-/* Title styles inside a card */
+
+/* Card styles */
+.group-container .card {
+  flex: 1 1 350px;
+  max-width: 450px;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #cbc0d3;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  display: grid;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Title styles */
 h2 {
   text-align: center;
   font-size: 1.8rem;
   color: #494949;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 h2::after {
@@ -246,14 +276,15 @@ footer {
 
 /* Responsive section */
 @media screen and (max-width: 800px) {
+  .group-container {
+    flex-direction: column;
+    align-items: center;
+  }
   .original {
     display: none;
   }
   .home {
     margin: 0;
-  }
-  .desc {
-    text-align: justify;
   }
   #check {
     display: none;
