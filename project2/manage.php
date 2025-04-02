@@ -9,7 +9,7 @@ session_start(); // Start the session, creates $_SESSION
 //     exit; }
 include 'header.inc';
 include 'manage.inc';   
-require_once 'settings.php' ;
+require_once 'settings-manage.php' ;
 // if (isset($conn)) {
 //     switch (connection_status()) {
 //         case CONNECTION_NORMAL:
