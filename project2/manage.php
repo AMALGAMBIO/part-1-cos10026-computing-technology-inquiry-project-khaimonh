@@ -10,30 +10,33 @@ session_start(); // Start the session, creates $_SESSION
 include 'header.inc';
 include 'manage.inc';   
 require_once 'settings.php' ;
-if (isset($conn)) {
-    switch (connection_status()) {
-        case CONNECTION_NORMAL:
-            $txt = 'Connection is in a normal state';
-            break;
-        case CONNECTION_ABORTED:
-            $txt = 'Connection aborted';
-            break;
-        case CONNECTION_TIMEOUT:
-            $txt = 'Connection timed out';
-            break;
-        case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
-            $txt = 'Connection aborted and timed out';
-            break;
-        default:
-            $txt = 'Unknown';
-            break;
-    }
-    echo $txt;
-} else {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// if (isset($conn)) {
+//     switch (connection_status()) {
+//         case CONNECTION_NORMAL:
+//             $txt = 'Connection is in a normal state';
+//             break;
+//         case CONNECTION_ABORTED:
+//             $txt = 'Connection aborted';
+//             break;
+//         case CONNECTION_TIMEOUT:
+//             $txt = 'Connection timed out';
+//             break;
+//         case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
+//             $txt = 'Connection aborted and timed out';
+//             break;
+//         default:
+//             $txt = 'Unknown';
+//             break;
+//     }
+//     echo $txt;
+// } else {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
 
 ?>
+<nav>
+    <a href="index.php" class="home">BITBOPS</a>
+</nav>
 
 <div id="allEOIs">
     <h3>All Applications</h3>
