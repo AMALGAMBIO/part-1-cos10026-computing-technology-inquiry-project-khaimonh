@@ -4,56 +4,66 @@ include 'header.inc';
 include 'menu.inc';
 ?>
 
-<h2> EOI records table</h2>
+<h2>EOI Records Table</h2>
 
 <?php
-//Connect to database
+// Connect to the database
 require_once "settings.php";
-$conn = mysqli_connect("$host", "$user", "$password", "$database");
-if($conn) {
-  $query = "SELECT * FROM `EOI`";                                   //Insert query
-  $result = mysqli_query ($conn, $query);
-if ($result) {
-    $record = mysqli_fetch_assoc($result);
-    echo "<table border='1'>";
-    echo "<tr>
-    <th>ID</th>
-    <th>Job Reference Number</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Gender</th>
-    <th>Phone number</th>
-    <th>Street Address</th>
-    <th>Suburb Town</th>
-    <th>State</th>
-    <th>Email Address</th>
-    <th>Other skills</th>
-    <th>Status</th></tr>";
+$conn = mysqli_connect($host, $user, $password, $database);
 
-while($record) {
-    echo "<tr><td>{$record['EOInumber']}</td>";
-    echo "<td>{$record['Job Reference Number']}</td>";
-    echo "<td>{$record['First Name']}</td>";
-    echo "<td>{$record['Last Name']}</td>";
-    echo "<td>{$record['Gender']}</td></tr>";
-    echo "<td>{$record['Phone number']}</td></tr>";
-    echo "<td>{$record['Street Address']}</td></tr>";
-    echo "<td>{$record['Suburb Town']}</td></tr>";
-    echo "<td>{$record['State']}</td></tr>";
-    echo "<td>{$record['Email Address']}</td></tr>";
-    echo "<td>{$record['Other Skills']}</td></tr>";
-    echo "<td>{$record['Status']}</td></tr>";
-    $record = mysqli_fetch_assoc($result);
-}
-echo "</table>";
-mysqli_free_result($result);
-}  
-  echo "<p>Connection successful</p>";
-  mysqli_close($conn);
+if ($conn) {
+    $query = "SELECT * FROM `eoi`"; // Query to fetch all EOI records
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        echo "<table border='1'>";
+        echo "<thead>
+                <tr>
+                    <th>Job Reference Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Phone Number</th>
+                    <th>Street Address</th>
+                    <th>Suburb Town</th>
+                    <th>State</th>
+                    <th>Email Address</th>
+                    <th>Other Skills</th>
+                </tr>
+              </thead>";
+        echo "<tbody>";
+
+        // Fetch and display each record
+        while ($record = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+                    <td>{$record['Job Reference Number']}</td>
+                    <td>{$record['First Name']}</td>
+                    <td>{$record['Last Name']}</td>
+                    <td>{$record['Gender']}</td>
+                    <td>{$record['Phone number']}</td>
+                    <td>{$record['Street Address']}</td>
+                    <td>{$record['Suburb Town']}</td>
+                    <td>{$record['State']}</td>
+                    <td>{$record['Email Address']}</td>
+                    <td>{$record['Other Skills']}</td>
+                  </tr>";
+        }
+
+        echo "</tbody>";
+        echo "</table>";
+
+        // Free the result set
+        mysqli_free_result($result);
+    } else {
+        echo "<p>No records found in the database.</p>";
+    }
+
+    echo "<p>Connection successful</p>";
+    mysqli_close($conn);
 } else {
-  echo "<p>Connection failed</p>";
+    echo "<p>Connection failed: " . mysqli_connect_error() . "</p>";
 }
 ?>
 
-<?php require "footer.inc";  ?>
+<?php require "footer.inc"; ?>
 
