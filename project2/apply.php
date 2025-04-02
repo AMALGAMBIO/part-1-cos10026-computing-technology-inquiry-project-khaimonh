@@ -1,81 +1,126 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
-<?php
+<link rel="stylesheet" href="./styles/apply.css">
 
-//Connect to database
-require_once "settings.php";
+<div class="container">
+      <main>
+        <div class="application-form">
+          <div class="application-form-detail">
+            <h2>Job Application Form</h2>
+            <form action="afterfillapply.php" method="post" enctype="multipart/form-data">
+              <h4>Contact Information</h4>
+              <div class="form-inline">
+                <div class="form-group">
+                  <label for="fname">First Name *</label>
+                  <input
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    maxlength="20"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="lname"
+                    maxlength="20"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="tel">Phone *</label>
+                <input
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="address">Address *</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  maxlength="40"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="stown">Suburb/Town *</label>
+                <input
+                  type="text"
+                  id="stown"
+                  name="stown"
+                  maxlength="40"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">State *</label>
+                <select id="state" name="state" required>
+                  <option value="VIC">VIC</option>
+                  <option value="NSW">NSW</option>
+                  <option value="QLD">QLD</option>
+                  <option value="NT">NT</option>
+                  <option value="WA">WA</option>
+                  <option value="SA">SA</option>
+                  <option value="TAS">TAS</option>
+                  <option value="ACT">ACT</option>
+                </select>
+              </div>
+              <br />
+              <h4>Position</h4>
+              <hr />
+              <div class="form-group">
+                <label for="jobnumber">Job Reference Number *</label>
+                <input
+                  type="text"
+                  id="jobnumber"
+                  name="jobnumber"
+                  minlength="4"
+                  maxlength="4"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cv_image">Upload CV:</label>
+                <input type="file" name="cv_image" id="cv_image" accept="image/*" required />
+              </div>
+              <div class="form-group">
+                <label for="skills">Other Skills</label>
+                <input type="text" id="skills" name="skills" />
+              </div>
+              <hr />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+        <footer class="footer">
+          <p>Copyright © 2025 by Bitbops .All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
 
-// Assign the values
-$fname = trim($_POST['fname']);
-$lname = trim($_POST['lname']);
-$tel = trim($_POST['tel']);
-$gender = trim($_POST['gender']);
-$address = trim($_POST['address']);
-$stown = trim($_POST['stown']);
-$state = trim($_POST['state']);
-$email = trim($_POST['email']);
-$jobnumber = trim($_POST['jobnumber']);
-$skills = trim($_POST['skills']);
 
-// Debugging: Check if the file input exists
-if (!isset($_FILES['cv_image'])) {
-    echo "<pre>";
-    print_r($_FILES); // Debug the $_FILES array
-    echo "</pre>";
-    die("File input 'cv_image' is missing. Please check your form.");
-}
 
-// Handle CV image upload
-if ($_FILES['cv_image']['error'] === UPLOAD_ERR_OK) {
-    $targetDir = "cv_images/";
-    if (!is_dir($targetDir)) {
-        mkdir($targetDir, 0777, true); // Create the directory if it doesn't exist
-    }
 
-    // Generate a unique file name to avoid overwriting
-    $fileName = uniqid() . "_" . basename($_FILES['cv_image']['name']);
-    $targetFilePath = $targetDir . $fileName;
-
-    // Move the uploaded file to the target directory
-    if (move_uploaded_file($_FILES['cv_image']['tmp_name'], $targetFilePath)) {
-        echo "File uploaded successfully: " . $targetFilePath . "<br>";
-    } else {
-        die("Failed to move the uploaded file.");
-    }
-} else {
-    die("File upload error: " . $_FILES['cv_image']['error']);
-}
-
-// Set PHP configuration for file uploads
-ini_set('file_uploads', 'On');
-ini_set('upload_max_filesize', '40M');
-ini_set('post_max_size', '50M');
-
-$conn = new mysqli($host, $user, $password, $database);
-if ($conn) {
-    echo "<p>Connection successful</p>";
-} else {
-    die("<p>Connection failed: " . $conn->connect_error . "</p>");
-}
-
-$stmt = $conn->prepare("INSERT INTO eoi (`Job Reference Number`, `First Name`, `Last Name`, `Gender`, `Phone number`, `Street Address`, `Suburb Town`, `State`, `Email Address`, `CV Images`, `Other Skills`)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-if (!$stmt) {
-    die("Prepare failed: " . $conn->error);
-}
-
-// Bind all parameters
-$stmt->bind_param("sssssssssss", $jobnumber, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $targetFilePath, $skills);
-
-if ($stmt->execute()) {
-    echo "<p>Successfully added new data record</p>";
-} else {
-    echo "<p>Something went wrong: " . $stmt->error . "</p>";
-}
-
-$stmt->close();
-$conn->close();
-
-?>
-
-<?php include 'footer.inc'; ?>
