@@ -51,17 +51,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $stmt->close();
 }
 ?>
-
+<link rel="stylesheet" href="styles/login-register.css">
+</head>
 <body>
-    <h2>Login</h2>
-    <form method="post" action="login-enhancement.php">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <button type="submit" name="login">Login</button>
-    </form>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post" action="login-enhancement.php">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <button type="submit" name="login">Login</button>
+        </form>
+    </div>
+    <?php
+    include 'footer.inc'; // Include footer
+    ?>
 </body>
+
 

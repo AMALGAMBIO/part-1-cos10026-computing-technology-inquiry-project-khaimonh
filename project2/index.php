@@ -1,9 +1,11 @@
 <?php include 'header.inc'; ?>
-<?php include 'menu.inc'; ?>
 <?php include 'settings.php'; ?>
-
-    <!-- <img class="background" src="/project1/images/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg" alt="lorenzo-herrera-unsplash"> -->
-    <main>
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<!-- <img class="background" src="/project1/images/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg" alt="lorenzo-herrera-unsplash"> -->
+<?php include 'menu.inc'; ?>
+<main>
       <div class="desc">
         <h1 class="about">About our company</h1>
         Bitbops is a forward-thinking IT services and consulting firm dedicated

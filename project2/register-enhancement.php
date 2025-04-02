@@ -9,21 +9,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit;
 }
 ?>
+<link rel="stylesheet" href="styles/login-register.css">
+</head>
 
-<html lang="en">
 <body>
-    <h1>Register</h1>
-    <form action="register-enhancement.php" method="post">
-        <label for="username">Admin Username</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Admin Password</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" name="register" value="Register">
-    </form>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="register-enhancement.php" method="post">
+            <label for="username">Admin Username</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="password">Admin Password</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input class="submit-button" type="submit" name="register" value="Register">
+        </form>
+    </div>
 </body>
-</html>
+
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
@@ -62,4 +65,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
 }
 session_unset();
 session_destroy();
+include 'footer.inc'; // Include footer
 ?>
