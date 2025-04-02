@@ -49,6 +49,7 @@
               <div class="form-group">
                 <label for="gender">Gender *</label>
                 <select id="gender" name="gender" required>
+                  <option value="#">Select Choice</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
@@ -76,6 +77,7 @@
               <div class="form-group">
                 <label for="state">State *</label>
                 <select id="state" name="state" required>
+                  <option value="#">Select Choice</option>
                   <option value="VIC">VIC</option>
                   <option value="NSW">NSW</option>
                   <option value="QLD">QLD</option>
@@ -91,15 +93,15 @@
               <hr />
               <div class="form-group">
                 <label for="jobnumber">Job Reference Number *</label>
-                <input
-                  type="text"
-                  id="jobnumber"
-                  name="jobnumber"
-                  minlength="4"
-                  maxlength="4"
-                  required
-                />
+                <select id="jobnumber" name="jobnumber" required>
+                  <option value="#">Select Choice</option>
+                  <option value="PM10">PM10</option>
+                  <option value="DE11">DE11</option>
+                  <option value="DS12">DS12</option>
+                  <option value="FD13">FD13</option>
+                </select>
               </div>
+
               <div class="form-group">
                 <label for="cv_image">Upload CV:</label>
                 <input type="file" name="cv_image" id="cv_image" accept="image/*" required />
