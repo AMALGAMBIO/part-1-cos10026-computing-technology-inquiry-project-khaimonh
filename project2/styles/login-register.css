@@ -83,3 +83,6 @@ nav a {
 	text-decoration: none;
 	color: var(--lilac);
 }
+.register-input{
+    margin: 4px;
+}
