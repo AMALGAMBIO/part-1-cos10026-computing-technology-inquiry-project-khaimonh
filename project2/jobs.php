@@ -1,5 +1,6 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
+<link rel="stylesheet" href="./styles/jobsp.css">
 
 <h2>Jobs Description Table</h2>
 
@@ -22,6 +23,7 @@ if ($conn) {
                     <th>Job Descriptions</th>
                     <th>Benefits</th>
                     <th>Salary</th>
+                    <th>Action</th>
                 </tr>
               </thead>";
         echo "<tbody>";
@@ -32,7 +34,13 @@ if ($conn) {
                     <td>{$record['Job Descriptions']}</td>
                     <td>{$record['Benefits']}</td>
                     <td>\${$record['Salary']}</td>
-                  </tr>";}
+                    <td>
+                    <form action='apply.php' method='post'>
+                        <input type='hidden' name='jobnumber' value='{$record['Job Reference Number']}'>
+                        <button type='submit'>Apply</button>
+                    </form>
+                    </td>
+                </tr>";}
 
         echo "</tbody>";
         echo "</table>";
