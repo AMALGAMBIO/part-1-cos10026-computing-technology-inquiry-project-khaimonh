@@ -1,10 +1,12 @@
 <?php
-
 include 'header.inc';
 include 'menu.inc';
 ?>
+<link rel="stylesheet" href="styles/process_eoi.css">
 
-<h2>EOI Records Table</h2>
+<main>
+<h2>Welcome to the EOI records page. <br> Here you can view all the records submitted through the apply form.</h2>
+
 
 <?php
 // Connect to the database
@@ -28,6 +30,7 @@ if ($conn) {
                     <th>Suburb Town</th>
                     <th>State</th>
                     <th>Email Address</th>
+                    <th>CV Images</th>
                     <th>Other Skills</th>
                 </tr>
               </thead>";
@@ -45,6 +48,7 @@ if ($conn) {
                     <td>{$record['Suburb Town']}</td>
                     <td>{$record['State']}</td>
                     <td>{$record['Email Address']}</td>
+                    <td>{$record['CV images']}</td>
                     <td>{$record['Other Skills']}</td>
                   </tr>";
         }
@@ -64,6 +68,7 @@ if ($conn) {
     echo "<p>Connection failed: " . mysqli_connect_error() . "</p>";
 }
 ?>
+</main>
 
 <?php require "footer.inc"; ?>
 
