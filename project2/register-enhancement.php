@@ -1,7 +1,7 @@
 <?php
 session_start(); // Start the session
 include 'header.inc'; // Include header
-require_once 'settings.php'; // Include database settings
+require_once 'settings-manage.php'; // Include database settings
 
 // Redirect to manage.php if already logged in
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
