@@ -1,5 +1,6 @@
 <?php include 'header.inc'; ?>
 <?php include 'menu.inc'; ?>
+<link rel="stylesheet" href="./styles/confirmation.css">
 <?php
 
 //Connect to database
@@ -17,10 +18,9 @@ $email = trim($_POST['email']);
 $jobnumber = trim($_POST['jobnumber']);
 $skills = trim($_POST['skills']);
 
-//Handle the job numble 
+//Handle the job number
 if (isset($_POST['jobnumber'])) {
     $jobnumber = $_POST['jobnumber'];
-    echo "<p>Applying for Job Reference Number: $jobnumber</p>";
 }
 
 // Debugging: Check if the file input exists
@@ -41,15 +41,8 @@ if ($_FILES['cv_image']['error'] === UPLOAD_ERR_OK) {
     // Generate a unique file name to avoid overwriting
     $fileName = uniqid() . "_" . basename($_FILES['cv_image']['name']);
     $targetFilePath = $targetDir . $fileName;
-
-    // Move the uploaded file to the target directory
-    if (move_uploaded_file($_FILES['cv_image']['tmp_name'], $targetFilePath)) {
-        echo "File uploaded successfully: " . $targetFilePath . "<br>";
-    } else {
-        die("Failed to move the uploaded file.");
-    }
 } else {
-    die("File upload error: " . $_FILES['cv_image']['error']);
+die("File upload error: " . $_FILES['cv_image']['error']);
 }
 
 // Set PHP configuration for file uploads
@@ -58,11 +51,7 @@ ini_set('upload_max_filesize', '40M');
 ini_set('post_max_size', '50M');
 
 $conn = new mysqli($host, $user, $password, $database);
-if ($conn) {
-    echo "<p>Connection successful</p>";
-} else {
-    die("<p>Connection failed: " . $conn->connect_error . "</p>");
-}
+
 
 $stmt = $conn->prepare("INSERT INTO eoi (`Job Reference Number`, `First Name`, `Last Name`, `Gender`, `Phone number`, `Street Address`, `Suburb Town`, `State`, `Email Address`, `CV Images`, `Other Skills`)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -74,8 +63,25 @@ if (!$stmt) {
 $stmt->bind_param("sssssssssss", $jobnumber, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $targetFilePath, $skills);
 
 if ($stmt->execute()) {
-    echo "<p>Successfully added new data record</p>";
-    header("Location: process_eoi.php");
+    // Retrieve the auto-generated EOInumber
+    $eoiNumber = $conn->insert_id;
+
+    //Display the confirmation message
+    echo "<h2>Application Submitted Successfully</h2>";
+    echo "<p>Your unique EOI number is: <strong>$eoiNumber</strong>.</p>";
+    echo "<p>We have received your application for the position of <strong>$jobnumber</strong>.</p>";
+    echo "<p><strong>First Name:</strong> $fname</p>";
+    echo "<p><strong>Last Name:</strong> $lname</p>";
+    echo "<p><strong>Gender:</strong> $gender</p>";
+    echo "<p><strong>Last Name:</strong> $lname</p>";
+    echo "<p><strong>Phone Number:</strong> $tel</p>";
+    echo "<p><strong>Street Address:</strong> $address</p>";
+    echo "<p><strong>Suburb/Town:</strong> $stown</p>";
+    echo "<p><strong>State:</strong> $state</p>";
+    echo "<p><strong>Email Address:</strong> $email</p>";
+    echo "<p><strong>CV Image:</strong> <a href='$targetFilePath'>$fileName</a></p>";
+    echo "<p><strong>Other Skills:</strong> $skills</p>";
+    echo "<p>Thank you for your application. We will review it and get back to you soon.</p>";
 } else {
     echo "<p>Something went wrong: " . $stmt->error . "</p>";
 }
