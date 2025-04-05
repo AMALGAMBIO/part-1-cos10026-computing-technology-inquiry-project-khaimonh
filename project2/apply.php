@@ -91,16 +91,22 @@
               <br />
               <h4>Position</h4>
               <hr />
-              <div class="form-group">
-                <label for="jobnumber">Job Reference Number *</label>
-                <select id="jobnumber" name="jobnumber" required>
-                  <option value="#">Select Choice</option>
-                  <option value="PM10">PM10</option>
-                  <option value="DE11">DE11</option>
-                  <option value="DS12">DS12</option>
-                  <option value="FD13">FD13</option>
-                </select>
-              </div>
+              <div class="form-group1">
+                  <label>Job Reference Number *</label><br>
+
+                  <input type="checkbox" id="pm10" name="jobnumber[]" value="PM10">
+                  <label for="pm10">PM10</label><br>
+
+                  <input type="checkbox" id="de11" name="jobnumber[]" value="DE11">
+                  <label for="de11">DE11</label><br>
+
+                  <input type="checkbox" id="ds12" name="jobnumber[]" value="DS12">
+                  <label for="ds12">DS12</label><br>
+
+                  <input type="checkbox" id="fd13" name="jobnumber[]" value="FD13">
+                  <label for="fd13">FD13</label><br>
+                </div>
+
 
               <div class="form-group">
                 <label for="cv_image">Upload CV:</label>

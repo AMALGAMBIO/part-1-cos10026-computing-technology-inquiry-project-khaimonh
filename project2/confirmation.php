@@ -15,7 +15,8 @@ $address = trim($_POST['address']);
 $stown = trim($_POST['stown']);
 $state = trim($_POST['state']);
 $email = trim($_POST['email']);
-$jobnumber = trim($_POST['jobnumber']);
+$jobnumbers = $_POST['jobnumber']; // Mảng các công việc
+$jobnumberString = implode(", ", $jobnumbers); // Gộp thành chuỗi "PM10, DE11"
 $skills = trim($_POST['skills']);
 
 //Handle the job number
@@ -60,7 +61,7 @@ if (!$stmt) {
 }
 
 // Bind all parameters
-$stmt->bind_param("sssssssssss", $jobnumber, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $targetFilePath, $skills);
+$stmt->bind_param("sssssssssss", $jobnumberString, $fname, $lname, $gender, $tel, $address, $stown, $state, $email, $targetFilePath, $skills);
 
 if ($stmt->execute()) {
     // Retrieve the auto-generated EOInumber
@@ -69,7 +70,7 @@ if ($stmt->execute()) {
     //Display the confirmation message
     echo "<h2>Application Submitted Successfully</h2>";
     echo "<p>Your unique EOI number is: <strong>$eoiNumber</strong>.</p>";
-    echo "<p>We have received your application for the position of <strong>$jobnumber</strong>.</p>";
+    echo "<p>We have received your application for the position of <strong>:$jobnumberString</strong></p>";
     echo "<p><strong>First Name:</strong> $fname</p>";
     echo "<p><strong>Last Name:</strong> $lname</p>";
     echo "<p><strong>Gender:</strong> $gender</p>";
