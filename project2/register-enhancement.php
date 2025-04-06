@@ -13,6 +13,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 </head>
 
 <body>
+    <nav>
+    <a href="index.php" class="home">BITBOPS</a>
+</nav>
     <div class="container">
         <h1>Register</h1>
         <form action="register-enhancement.php" method="post">

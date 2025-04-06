@@ -54,6 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 <link rel="stylesheet" href="styles/login-register.css">
 </head>
 <body>
+    <nav>
+    <a href="index.php" class="home">BITBOPS</a>
+</nav>
     <div class="container">
         <h2>Login</h2>
         <form method="post" action="login-enhancement.php">
