@@ -7,7 +7,7 @@
         <div class="application-form">
           <div class="application-form-detail">
             <h2>Job Application Form</h2>
-            <form action="afterfillapply.php" method="post" enctype="multipart/form-data">
+            <form action="confirmation.php" method="post" enctype="multipart/form-data">
               <h4>Contact Information</h4>
               <div class="form-inline">
                 <div class="form-group">
@@ -128,7 +128,3 @@
     </div>
   </body>
 </html>
-
-
-
-
